@@ -13,7 +13,7 @@ export default {
 
 	darkMode: 'selector',
 
-	plugins: [require("daisyui")],
+	plugins: [require("daisyui"), require('@tailwindcss/typography'),],
 	daisyui: {
 		themes: [
 			"retro",
