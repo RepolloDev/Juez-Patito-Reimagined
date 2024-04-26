@@ -1,4 +1,4 @@
-import { Theme } from '../../const/themes'
+import { Scheme, type Theme } from '../../const/themes'
 import { useState, useEffect } from 'react'
 import { useStore } from '@nanostores/react'
 import { isThemeUpdating } from '../../stores/themeStore'
@@ -6,19 +6,19 @@ import { ReactSVG } from 'react-svg'
 
 export default function Logo() {
   const logoThemes: Record<string, string> = {
-    [Theme.LIGHT]: "/light.svg",
-    [Theme.DARK]: "/dark.svg",
-    [Theme.WHITE]: "/white.svg",
-    [Theme.BLACK]: "/black.svg",
+    [Scheme.LIGHT]: "/light.svg",
+    [Scheme.DARK]: "/dark.svg",
+    [Scheme.WHITE]: "/white.svg",
+    [Scheme.BLACK]: "/black.svg",
   }
 
-  const [currentTheme, setTheme] = useState<string>(Theme.LIGHT)
+  const [currentTheme, setTheme] = useState<Theme>(Scheme.LIGHT)
   const $updating = useStore(isThemeUpdating)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme) {
-      setTheme(theme)
+    if (theme && theme in Scheme) {
+      setTheme(theme as Theme)
     }
   }, [$updating])
 

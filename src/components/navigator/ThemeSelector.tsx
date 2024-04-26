@@ -1,17 +1,17 @@
 import { Palette } from '@phosphor-icons/react'
-import { Theme, defaultTheme } from '../../const/themes'
+import { Scheme, defaultTheme, type Theme } from '../../const/themes'
 import { useState, useEffect } from 'react'
 import { useStore } from '@nanostores/react'
 import { isThemeUpdating } from '../../stores/themeStore'
 
 export default function ThemeSelector() {
-  const [currentTheme, setTheme] = useState<string>(defaultTheme)
+  const [currentTheme, setTheme] = useState<Theme>(defaultTheme)
   const $updating = useStore(isThemeUpdating)
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme) {
-      setTheme(theme)
+    if (theme && theme in Scheme) {
+      setTheme(theme as Theme)
     }
   }, [$updating])
 
@@ -24,7 +24,7 @@ export default function ThemeSelector() {
         tabIndex={0}
         className="dropdown-content z-[1] p-2 shadow flex flex-col bg-base-100 rounded-md w-52 gap-2">
         {
-          Object.values(Theme).map((theme) => (
+          Object.values(Scheme).map((theme) => (
             <li
               key={theme}
             >
