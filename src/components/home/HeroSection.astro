@@ -1,0 +1,60 @@
+---
+import { ArrowRight, DiceFive } from '@phosphor-icons/react'
+---
+
+<section
+  class="min-h-dvh flex flex-col pb-16 justify-center lg:pb-0 lg:grid lg:pt-32 lg:grid-cols-2 lg:items-center lg:gap-10 relative">
+  <div class="content flex flex-col w-full gap-10 items-center lg:items-start">
+    <h2
+      class="text-5xl text-center font-bold max-w-[15ch] md:text-6xl lg:text-7xl lg:max-w-[10ch] lg:text-start">
+      <span>Programa y pon tu</span>
+      <span
+        class="text-4xl inline-flex bg-base-300 rounded-md p-1 font-victor-mono font-bold md:text-5xl lg:text-6xl">
+        <span class="text-error">Có</span>
+        <span class="text-warning">di</span>
+        <span class="text-success">go</span>
+      </span>
+      <span>a</span>
+      <span class="text-primary">jucio</span>
+    </h2>
+    <p
+      class="text-center max-w-[40ch] md:text-xl md:max-w-[50ch] lg:text-2xl lg:text-start xl:max-w-[32ch]">
+      Una plataforma académica abierta a todo público con problemas de
+      programación para aprender, mejorar y demostrar tus habilidades
+    </p>
+    <div
+      class="action-section flex justify-center gap-10 md:gap-20 lg:justify-start lg:gap-10">
+      <a href="/auth/register" class="btn btn-accent md:btn-lg">
+        <span> Comenzar ahora </span>
+        <ArrowRight />
+      </a>
+      <a href="/problems/random" class="btn btn-secondary md:btn-lg">
+        <DiceFive size="24" weight="duotone" />
+        <span> Random </span>
+      </a>
+    </div>
+  </div>
+  <div
+    class="absolute left-0 top-0 -z-10 w-full h-full flex items-center lg:static">
+    <!-- Imagen -->
+    <div
+      class="rounded-md p-5 h-[90%] w-full flex justify-center items-center opacity-20 lg:bg-base-200 lg:opacity-100">
+      <div class="glass lg:hidden"></div>
+      <img
+        class="object-cover w-full h-full md:object-contain"
+        src="/hero-image.png"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .glass {
+    backdrop-filter: blur(5px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>

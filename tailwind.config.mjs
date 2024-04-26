@@ -1,25 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-	theme: {
-		extend: {
-			fontFamily: {
-				'geist': ['Geist Sans', 'sans-serif'],
-				'victor-mono': ['Victor Mono Variable', 'monospace'],
-				'major-mono': ['Major Mono Display', 'monospace'],
-			}
-		},
-	},
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        geist: ['Geist Sans', 'sans-serif'],
+        'victor-mono': ['Victor Mono Variable', 'monospace'],
+        'major-mono': ['Major Mono Display', 'monospace'],
+      },
+    },
+  },
 
-	darkMode: 'selector',
+  darkMode: 'selector',
 
-	plugins: [require("daisyui"), require('@tailwindcss/typography'),],
-	daisyui: {
-		themes: [
-			"retro",
-			"dracula",
-			"lofi",
-			"black"
-		]
-	}
+  plugins: [require('daisyui'), require('@tailwindcss/typography')],
+  daisyui: {
+    themes: ['retro', 'dracula', 'lofi', 'black'],
+  },
 }

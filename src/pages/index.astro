@@ -1,7 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
+import HeroSection from '../components/home/HeroSection.astro'
+import Banner from '../components/home/Banner.astro'
+import NavBar from '../components/navigator/NavBar.astro'
 ---
 
 <Layout title="Welcome to Astro.">
-  <main>Hey there! 👋</main>
+  <header class="fixed w-full z-50">
+    <NavBar />
+    <Banner id="unofficial-web">
+      ⚠️ Esta página no es oficial, visite la página oficial del juez patito en <a
+        href="https://jv.umsa.bo/oj/"
+        class="underline">jv.umsa.bo</a
+      >
+    </Banner>
+  </header>
+  <main class="px-5 md:px-10 lg:px-16">
+    <HeroSection />
+    <hr />
+  </main>
 </Layout>
+
+<style lang="postcss">
+  hr {
+    @apply my-10;
+    @apply border-t-2;
+    @apply border-neutral
+  }
+</style>

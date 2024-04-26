@@ -1,22 +1,33 @@
 {
-    "workbench.colorCustomizations": {
-        "activityBar.activeBackground": "#5f286a",
-        "activityBar.background": "#5f286a",
-        "activityBar.foreground": "#e7e7e7",
-        "activityBar.inactiveForeground": "#e7e7e799",
-        "activityBarBadge.background": "#8b7c34",
-        "activityBarBadge.foreground": "#e7e7e7",
-        "commandCenter.border": "#e7e7e799",
-        "sash.hoverBorder": "#5f286a",
-        "statusBar.background": "#3e1a45",
-        "statusBar.foreground": "#e7e7e7",
-        "statusBarItem.hoverBackground": "#5f286a",
-        "statusBarItem.remoteBackground": "#3e1a45",
-        "statusBarItem.remoteForeground": "#e7e7e7",
-        "titleBar.activeBackground": "#3e1a45",
-        "titleBar.activeForeground": "#e7e7e7",
-        "titleBar.inactiveBackground": "#3e1a4599",
-        "titleBar.inactiveForeground": "#e7e7e799"
-    },
-    "peacock.color": "#3e1a45"
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#5f286a",
+    "activityBar.background": "#5f286a",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#8b7c34",
+    "activityBarBadge.foreground": "#e7e7e7",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#5f286a",
+    "statusBar.background": "#3e1a45",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#5f286a",
+    "statusBarItem.remoteBackground": "#3e1a45",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#3e1a45",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#3e1a4599",
+    "titleBar.inactiveForeground": "#e7e7e799"
+  },
+  "peacock.color": "#3e1a45",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

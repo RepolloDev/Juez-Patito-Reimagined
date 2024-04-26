@@ -1,0 +1,37 @@
+---
+import { X } from '@phosphor-icons/react'
+interface Props {
+  id: string
+}
+const { id } = Astro.props
+---
+
+<aside
+  id={id}
+  class="bg-neutral text-sm md:text-base text-neutral-content px-2 md:px-5 py-2 font-semibold items-center w-full gap-5 hidden">
+  <div class="w-full text-center">
+    <slot />
+  </div>
+  <button id="btn-closer" class="btn btn-sm btn-ghost text-neutral-content">
+    <X />
+  </button>
+</aside>
+
+<script>
+  const button = document.querySelector('#btn-closer')
+  const aside = document.querySelector(`aside`)
+  const id = aside?.id
+  if (id) {
+    const isClosed = localStorage.getItem(`announcement-${id}`)
+    if (isClosed) {
+      aside?.remove()
+    } else {
+      aside?.classList.remove('hidden')
+      aside?.classList.add('flex')
+    }
+    button?.addEventListener('click', () => {
+      aside?.remove()
+      localStorage.setItem(`announcement-${id}`, 'closed')
+    })
+  }
+</script>
