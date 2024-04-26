@@ -17,7 +17,7 @@ export default function Logo() {
 
   useEffect(() => {
     const theme = localStorage.getItem('theme')
-    if (theme && theme in Scheme) {
+    if (theme && Object.values(Scheme).includes(theme as Theme)) {
       setTheme(theme as Theme)
     }
   }, [$updating])
