@@ -3,7 +3,7 @@ import tailwind from '@astrojs/tailwind';
 import react from "@astrojs/react";
 import million from "million/compiler";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercelServerless from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,9 +12,15 @@ export default defineConfig({
     plugins: [million.vite({
       mode: 'react',
       server: true,
-      auto: true
+      auto: true,
+      log: false,
+      rsc: true,
     })]
   },
-  output: "server",
-  adapter: vercel()
+  output: "hybrid",
+  adapter: vercelServerless(
+    {
+      edgeMiddleware: true,
+    }
+  )
 });

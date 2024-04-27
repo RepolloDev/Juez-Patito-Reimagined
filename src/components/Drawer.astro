@@ -1,0 +1,39 @@
+---
+import { X } from '@phosphor-icons/react'
+
+interface Props {
+  open?: boolean
+  class?: string
+  'class-content'?: string
+  'class-header'?: string
+  id: string
+}
+
+const {
+  open,
+  id,
+  class: className,
+  'class-content': classContent,
+  'class-header': classHeader,
+} = Astro.props
+---
+
+<input id={id} type="checkbox" class="drawer-toggle" checked={open || false} />
+<div class="drawer-side z-50" class:list={[className]}>
+  <label for={id} aria-label="close sidebar" class="drawer-overlay"></label>
+  <div
+    class="p-4 w-80 min-h-full bg-base-200 text-base-content"
+    class:list={[classContent]}>
+    <div
+      class="drawer-header w-full flex items-center justify-center"
+      class:list={[classHeader]}>
+      <slot class:list={['w-full']} name="drawer-header" />
+      <label for={id} class="ml-auto btn btn-sm btn-ghost btn-circle">
+        <X size={16} className="w-5 inline-block" />
+      </label>
+    </div>
+    <div class="drawer-content">
+      <slot class:list={['w-full h-full']} />
+    </div>
+  </div>
+</div>

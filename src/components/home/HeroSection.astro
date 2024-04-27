@@ -3,10 +3,10 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
 ---
 
 <section
-  class="min-h-dvh flex flex-col pb-16 justify-center lg:pb-0 lg:grid lg:pt-32 lg:grid-cols-2 lg:items-center lg:gap-10 relative">
+  class="hero-height flex flex-col justify-center lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 relative">
   <div class="content flex flex-col w-full gap-10 items-center lg:items-start">
     <h2
-      class="text-5xl text-center font-bold max-w-[15ch] md:text-6xl lg:text-7xl lg:max-w-[10ch] lg:text-start">
+      class="text-5xl text-center font-bold max-w-[15ch] md:text-6xl lg:text-start xl:text-7xl xl:max-w-[10ch]">
       <span>Programa y pon tu</span>
       <span
         class="text-4xl inline-flex bg-base-300 rounded-md p-1 font-victor-mono font-bold md:text-5xl lg:text-6xl">
@@ -55,5 +55,9 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .hero-height {
+    height: max(90dvh, 600px);
   }
 </style>

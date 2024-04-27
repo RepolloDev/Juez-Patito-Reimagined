@@ -1,22 +1,216 @@
 ---
-import { List, GithubLogo } from '@phosphor-icons/react'
+import {
+  List,
+  GithubLogo,
+  Question,
+  Sparkle,
+  Code,
+  Confetti,
+  House,
+  PaperPlaneTilt,
+  Ranking,
+  DotsThreeCircle,
+  Package,
+  Info,
+  AddressBook,
+} from '@phosphor-icons/react'
 import LogoSection from './LogoSection.astro'
 import ThemeSelector from './ThemeSelector.tsx'
-import NavDrawer from './NavDrawer.astro'
-import NavOptions from './NavOptions.astro'
+import Dropdown from '@components/Dropdown.astro'
+import Drawer from '@components/Drawer.astro'
+import Collapse from '@components/Collapse.astro'
 
 const navDrawerId = 'nav-drawer'
+type Option = {
+  name: string
+  description: string
+  icon?: any
+  href?: string
+  subOptions?: Option[]
+}
+
+const options: Option[] = [
+  {
+    name: 'Inicio',
+    description: 'Página principal',
+    icon: House,
+    href: '/',
+  },
+  {
+    name: 'Content',
+    description: 'Content',
+    icon: Package,
+    subOptions: [
+      {
+        name: 'Problemas',
+        description: 'Problemas',
+        icon: Code,
+        href: '/content/problems',
+      },
+      {
+        name: 'Concursos',
+        description: 'Concursos',
+        icon: Confetti,
+        href: '/content/contests',
+      },
+      {
+        name: 'Ranking',
+        description: 'Ranking',
+        icon: Ranking,
+        href: '/ranking',
+      },
+      {
+        name: 'Envios',
+        description: 'Envios',
+        icon: PaperPlaneTilt,
+        href: '/sends',
+      },
+    ],
+  },
+  {
+    name: 'Ayuda',
+    description: 'Ayuda',
+    icon: Sparkle,
+    href: '/help',
+  },
+  {
+    name: 'Más',
+    description: 'Más',
+    icon: DotsThreeCircle,
+    subOptions: [
+      {
+        name: 'Pregunatas frecuentes',
+        description: 'Preguntas frecuentes',
+        icon: Question,
+        href: '/faq',
+      },
+
+      {
+        name: 'Sobre JPR',
+        description: 'Sobre JPR',
+        icon: Info,
+        href: '/about',
+      },
+      {
+        name: 'Contacto',
+        description: 'Contacto',
+        icon: AddressBook,
+        href: '/contact',
+      },
+    ],
+  },
+]
 ---
 
 <nav
   class="navbar bg-base-100 px-5 border-b-2 border-b-neutral drawer drawer-end">
-  <div class="navbar-start gap-5">
+  <div class="navbar-start">
     <LogoSection />
   </div>
   <div class="navbar-center hidden lg:flex">
-    <NavOptions />
+    <ul class="flex gap-5">
+      {
+        options.map((opt) => {
+          return (
+            <li>
+              {!opt.subOptions ? (
+                <a class="btn px-2 btn-ghost items-center justify-center">
+                  {opt.icon && (
+                    <opt.icon size={16} className="w-4 h-4 inline-block" />
+                  )}
+                  {opt.name}
+                </a>
+              ) : (
+                <Dropdown modifier="hover" aling="end">
+                  <div
+                    slot="dropdown-button"
+                    class="btn px-2 btn-ghost items-center justify-center">
+                    {opt.icon && (
+                      <opt.icon size={16} className="w-4 h-4 inline-block" />
+                    )}
+                    {opt.name}
+                  </div>
+                  <ul class="menu">
+                    {opt.subOptions.map((subOpt) => (
+                      <li>
+                        <a href={subOpt.href}>
+                          {subOpt.icon && (
+                            <subOpt.icon
+                              size={16}
+                              className="w-4 h-4 inline-block"
+                            />
+                          )}
+                          {subOpt.name}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </Dropdown>
+              )}
+            </li>
+          )
+        })
+      }
+    </ul>
   </div>
-  <div class="navbar-end drawer-content gap-1 lg:gap-2">
+  <Drawer id={navDrawerId} class-header="mb-5" class-content="w-80 md:w-96">
+    <LogoSection slot="drawer-header" />
+    <slot>
+      <ul class="w-full flex flex-col gap-2">
+        {
+          options.map((opt) => {
+            return (
+              <li>
+                {!opt.subOptions ? (
+                  <a class="btn items-center justify-start w-full">
+                    {opt.icon && (
+                      <opt.icon size={16} className="w-4 h-4 inline-block" />
+                    )}
+                    {opt.name}
+                  </a>
+                ) : (
+                  <Collapse
+                    type="plus"
+                    class-button="btn items-center justify-start w-full">
+                    <slot slot="collapse-button">
+                      {opt.icon && (
+                        <opt.icon size={16} className="w-4 h-4 inline-block" />
+                      )}
+                      {opt.name}
+                    </slot>
+                    <ul class="menu border-l-2 border-neutral">
+                      {opt.subOptions.map((subOpt) => (
+                        <li>
+                          <a href={subOpt.href}>
+                            {subOpt.icon && (
+                              <subOpt.icon
+                                size={16}
+                                className="w-4 h-4 inline-block"
+                              />
+                            )}
+                            {subOpt.name}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </Collapse>
+                )}
+              </li>
+            )
+          })
+        }
+      </ul>
+      <hr class="border-neutral my-5" />
+      <div class="flex flex-col gap-2">
+        <a href="/auth/login" class="btn btn-neutral btn-outline btn-block"
+          >Iniciar sesión</a
+        >
+        <a href="/auth/register" class="btn btn-accent btn-block">Registrarse</a
+        >
+      </div>
+    </slot>
+  </Drawer>
+  <div class="navbar-end drawer-content gap-1">
     <a
       href="https://github.com/RepolloDev/Juez-Patito-Reimagined"
       target="_blank"
@@ -38,5 +232,4 @@ const navDrawerId = 'nav-drawer'
       class="btn btn-sm lg:hidden"><List size={24} className="w-5" /></label
     >
   </div>
-  <NavDrawer id={navDrawerId} />
 </nav>

@@ -1,0 +1,39 @@
+---
+const Types = {
+  plus: 'collapse-plus',
+  arrow: 'collapse-arrow',
+  default: false,
+} as const
+
+const Modifier = {
+  open: 'collapse-open',
+  close: 'collapse-close',
+  default: false,
+} as const
+
+interface Props {
+  class?: string
+  'class-button'?: string
+  'class-content'?: string
+  type?: keyof typeof Types
+  modifier?: keyof typeof Modifier
+}
+
+const {
+  class: className,
+  'class-button': classButton,
+  'class-content': classContent,
+  type = 'default',
+  modifier = 'default',
+} = Astro.props
+---
+
+<div class:list={['collapse', className, Types[type], Modifier[modifier]]}>
+  <input type="checkbox" class="w-full" />
+  <div class="collapse-title" class:list={[classButton]}>
+    <slot name="collapse-button" />
+  </div>
+  <div class="collapse-content" class:list={[classContent]}>
+    <slot />
+  </div>
+</div>

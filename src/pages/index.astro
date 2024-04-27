@@ -2,16 +2,22 @@
 import Layout from '@layouts/Layout.astro'
 import HeroSection from '@components/home/HeroSection.astro'
 import NavBar from '@components/navigator/NavBar.astro'
-import Banner from '@components/home/Banner.astro'
+import Alert from '@components/home/Alert.tsx'
 ---
 
 <Layout title="Welcome to Astro.">
-  <header class="fixed w-full z-50">
+  <header class="sticky top-0 w-full z-50">
     <NavBar />
-    <Banner id="announcement-page-oficial">
-      Esta es una página no oficial, visite la original en
-      <a class="link" href="https://jv.umsa.bo/">jv.umsa.bo</a>
-    </Banner>
+    <Alert
+      client:load
+      title="Página no oficial"
+      type="info"
+      className="fixed rounded-none py-2"
+      persist
+      id="announcement-page-oficial">
+      Si desea ver la página original y más rápida visite
+      <a href="https://jv.umsa.bo/" class="link">jv.umsa.bo </a>
+    </Alert>
   </header>
   <main class="px-5 md:px-10 lg:px-16">
     <HeroSection />
