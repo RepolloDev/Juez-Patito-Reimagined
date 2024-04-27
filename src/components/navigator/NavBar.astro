@@ -1,19 +1,5 @@
 ---
-import {
-  List,
-  GithubLogo,
-  CaretRight,
-  Question,
-  Sparkle,
-  X,
-  Code,
-  Confetti,
-  House,
-  PaperPlaneTilt,
-  Ranking,
-  DotsThreeCircle,
-  Package,
-} from '@phosphor-icons/react'
+import { List, GithubLogo } from '@phosphor-icons/react'
 import LogoSection from './LogoSection.astro'
 import ThemeSelector from './ThemeSelector.tsx'
 import NavDrawer from './NavDrawer.astro'
@@ -24,16 +10,12 @@ const navDrawerId = 'nav-drawer'
 
 <nav
   class="navbar bg-base-100 px-5 border-b-2 border-b-neutral drawer drawer-end">
-  <!-- Logo section -->
   <div class="navbar-start gap-5">
     <LogoSection />
   </div>
-  <!-- Options -->
   <div class="navbar-center hidden lg:flex">
     <NavOptions />
   </div>
-  <!-- Right content -->
-
   <div class="navbar-end drawer-content gap-1 lg:gap-2">
     <a
       href="https://github.com/RepolloDev/Juez-Patito-Reimagined"
@@ -42,11 +24,6 @@ const navDrawerId = 'nav-drawer'
       ><GithubLogo size={24} className="w-5 lg:w-10" />
     </a>
     <ThemeSelector client:load />
-    <label
-      for={navDrawerId}
-      aria-label="open sidebar"
-      class="btn btn-sm lg:hidden"><List size={24} className="w-5" /></label
-    >
     <a
       href="/auth/login"
       class="hidden btn btn-neutral btn-sm btn-outline lg:flex">
@@ -55,7 +32,11 @@ const navDrawerId = 'nav-drawer'
     <a href="/auth/register" class="hidden btn btn-accent btn-sm lg:flex">
       Registrarse
     </a>
+    <label
+      for={navDrawerId}
+      aria-label="open sidebar"
+      class="btn btn-sm lg:hidden"><List size={24} className="w-5" /></label
+    >
   </div>
-  <!-- Menu mobile -->
   <NavDrawer id={navDrawerId} />
 </nav>

@@ -1,12 +1,5 @@
 ---
-interface Props {
-  id: string
-}
-
-const { id } = Astro.props
-
 import {
-  CaretRight,
   Question,
   Sparkle,
   X,
@@ -19,6 +12,11 @@ import {
   Package,
 } from '@phosphor-icons/react'
 import Logo from './LogoSection.astro'
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
 ---
 
 <div>
@@ -41,14 +39,11 @@ import Logo from './LogoSection.astro'
         </li>
         <!-- Sidebar content here -->
         <li>
-          <div tabindex="0" class="collapse collapse-arrow gap-0 group">
-            <div class="flex items-center gap-2">
+          <div tabindex="0" class="collapse collapse-plus gap-0">
+            <input type="checkbox" class="w-full" />
+            <div class="collapse-title">
               <Package size={16} className="w-5 inline-block" />
               Contenido
-              <CaretRight
-                size={16}
-                className="ml-auto w-4 inline-block group-hover:rotate-90 transition-all"
-              />
             </div>
             <div class="collapse-content p-0 w-full">
               <ul class="menu w-full">
@@ -75,16 +70,11 @@ import Logo from './LogoSection.astro'
           </a>
         </li>
         <li>
-          <div tabindex="0" class="collapse collapse-arrow gap-0 group">
-            <div class="flex items-center gap-2">
+          <div tabindex="0" class="collapse collapse-plus gap-0">
+            <input type="checkbox" />
+            <div class="collapse-title">
               <DotsThreeCircle size={16} className="w-5 inline-block" />
-              <span>
-                Más
-                <CaretRight
-                  size={16}
-                  className="ml-auto w-4 inline-block group-hover:rotate-90 transition-all"
-                />
-              </span>
+              Más
             </div>
             <div class="collapse-content p-0 w-full">
               <ul tabindex="0" class="menu w-full">
@@ -124,3 +114,15 @@ import Logo from './LogoSection.astro'
     </div>
   </div>
 </div>
+
+<style>
+  .menu > li > div {
+    margin: 0;
+    padding: 0;
+
+    &:hover {
+      background-color: theme('colors.base-200');
+      color: theme('colors.base-content');
+    }
+  }
+</style>

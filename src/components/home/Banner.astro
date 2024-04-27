@@ -17,21 +17,19 @@ const { id } = Astro.props
   </button>
 </aside>
 
-<script>
+<script is:inline define:vars={{ id }}>
   const button = document.querySelector('#btn-closer')
-  const aside = document.querySelector(`aside`)
-  const id = aside?.id
-  if (id) {
-    const isClosed = localStorage.getItem(`announcement-${id}`)
-    if (isClosed) {
-      aside?.remove()
-    } else {
-      aside?.classList.remove('hidden')
-      aside?.classList.add('flex')
-    }
-    button?.addEventListener('click', () => {
-      aside?.remove()
-      localStorage.setItem(`announcement-${id}`, 'closed')
-    })
+  const aside = document.getElementById(`${id}`)
+
+  const isClosed = localStorage.getItem(`announcement-${id}`)
+  if (isClosed) {
+    aside?.remove()
+  } else {
+    aside?.classList.remove('hidden')
+    aside?.classList.add('flex')
   }
+  button?.addEventListener('click', () => {
+    aside?.remove()
+    localStorage.setItem(`announcement-${id}`, 'closed')
+  })
 </script>
