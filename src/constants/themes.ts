@@ -6,5 +6,10 @@ export const Scheme = {
 } as const
 
 // defaultTheme es del tipo de cada valor de Theme
-export type Theme = (typeof Scheme)[keyof typeof Scheme]
-export const defaultTheme: Theme = Scheme.LIGHT
+export type ThemeScheme = (typeof Scheme)[keyof typeof Scheme]
+export type Theme = keyof typeof Scheme
+
+export const defaultScheme: [theme: Theme, scheme: ThemeScheme] = [
+  'LIGHT',
+  'retro',
+]

@@ -1,17 +1,21 @@
 import { Palette } from '@phosphor-icons/react'
-import { Scheme, defaultTheme, type Theme } from '@constants/themes'
+import { Scheme, defaultScheme, type ThemeScheme } from '@constants/themes'
 import { useState, useEffect } from 'react'
 import { useStore } from '@nanostores/react'
 import { isThemeUpdating } from '@stores/themeStore'
 
 export default function ThemeSelector() {
-  const [currentTheme, setTheme] = useState<Theme>(defaultTheme)
+  const [, scheme] = defaultScheme
+  const [currentTheme, setTheme] = useState<ThemeScheme>(scheme)
   const $updating = useStore(isThemeUpdating)
 
   useEffect(() => {
-    const theme = localStorage.getItem('theme')
-    if (theme && Object.values(Scheme).includes(theme as Theme)) {
-      setTheme(theme as Theme)
+    const themeLocal = localStorage.getItem('theme')
+    if (
+      themeLocal &&
+      Object.values(Scheme).includes(themeLocal as ThemeScheme)
+    ) {
+      setTheme(themeLocal as ThemeScheme)
     }
   }, [$updating])
 
