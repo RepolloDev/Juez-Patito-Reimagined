@@ -1,9 +1,9 @@
 ---
-import Logo from '@components/Logo.astro'
+import Logo from '@components/Logo.tsx'
 ---
 
 <a href="/" class="flex gap-2 lg:gap-4 select-none items-center">
-  <Logo class="w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16" client:load />
+  <Logo client:load circle className="w-12 h-12 md:w-16 md:h-16" />
   <span class="font-major-mono text-2xl md:text-lg flex items-center">
     <span class="md:hidden">JP<span class="rainbow-text">R</span></span>
     <span class="hidden md:flex flex-col">

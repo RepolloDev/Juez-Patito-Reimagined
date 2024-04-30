@@ -8,15 +8,13 @@ import vercelServerless from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  vite: {
-    plugins: [million.vite({
-      mode: 'react',
-      server: true,
-      auto: true,
-      log: false,
-      rsc: true,
-    })]
-  },
+  // vite: {
+  //   plugins: [million.vite({
+  //     mode: 'react',
+  //     server: true,
+  //     auto: true,
+  //   })]
+  // },
   output: "hybrid",
   adapter: vercelServerless(
     {

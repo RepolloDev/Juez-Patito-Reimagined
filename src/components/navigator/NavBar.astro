@@ -14,7 +14,7 @@ import {
   Info,
   AddressBook,
 } from '@phosphor-icons/react'
-import LogoSection from './LogoSection.astro'
+import LogoText from './LogoText.astro'
 import ThemeSelector from './ThemeSelector.tsx'
 import Dropdown from '@components/Dropdown.astro'
 import Drawer from '@components/Drawer.astro'
@@ -37,7 +37,7 @@ const options: Option[] = [
     href: '/',
   },
   {
-    name: 'Content',
+    name: 'Contenido',
     description: 'Content',
     icon: Package,
     subOptions: [
@@ -105,7 +105,7 @@ const options: Option[] = [
 <nav
   class="navbar bg-base-100 px-5 border-b-2 border-b-neutral drawer drawer-end">
   <div class="navbar-start w-[45%]">
-    <LogoSection />
+    <LogoText />
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="flex gap-5">
@@ -154,7 +154,7 @@ const options: Option[] = [
     </ul>
   </div>
   <Drawer id={navDrawerId} class-header="mb-5" class-content="w-80 md:w-96">
-    <LogoSection slot="drawer-header" />
+    <LogoText slot="drawer-header" />
     <slot>
       <ul class="w-full flex flex-col gap-2">
         {

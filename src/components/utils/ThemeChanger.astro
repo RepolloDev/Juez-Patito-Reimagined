@@ -1,10 +1,10 @@
 ---
-import { defaultTheme } from '../../constants/themes'
+import { defaultTheme } from '@constants/themes'
 ---
 
 <script is:inline define:vars={{ defaultTheme }}>
   if (localStorage.getItem('theme') === null) {
-    document.documentElement.setAttribute('data-theme', defaultTheme)
+    document.documentElement.setAttribute('data-theme', defaultTheme.themeName)
   } else
     document.documentElement.setAttribute(
       'data-theme',

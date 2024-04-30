@@ -1,24 +1,24 @@
 {
   "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#5f286a",
-    "activityBar.background": "#5f286a",
+    "activityBar.activeBackground": "#616587",
+    "activityBar.background": "#616587",
     "activityBar.foreground": "#e7e7e7",
     "activityBar.inactiveForeground": "#e7e7e799",
-    "activityBarBadge.background": "#8b7c34",
+    "activityBarBadge.background": "#4a3538",
     "activityBarBadge.foreground": "#e7e7e7",
     "commandCenter.border": "#e7e7e799",
-    "sash.hoverBorder": "#5f286a",
-    "statusBar.background": "#3e1a45",
+    "sash.hoverBorder": "#616587",
+    "statusBar.background": "#4c4f69",
     "statusBar.foreground": "#e7e7e7",
-    "statusBarItem.hoverBackground": "#5f286a",
-    "statusBarItem.remoteBackground": "#3e1a45",
+    "statusBarItem.hoverBackground": "#616587",
+    "statusBarItem.remoteBackground": "#4c4f69",
     "statusBarItem.remoteForeground": "#e7e7e7",
-    "titleBar.activeBackground": "#3e1a45",
+    "titleBar.activeBackground": "#4c4f69",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#3e1a4599",
+    "titleBar.inactiveBackground": "#4c4f6999",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#3e1a45",
+  "peacock.color": "#4c4f69",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
@@ -28,6 +28,13 @@
   ],
   "prettier.documentSelectors": ["**/*.astro"],
   "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "cSpell.words": [
+    "astro",
+    "astrojs",
+    "derecho",
+    "izquierdo",
+    "nanostores"
+  ]
 }
