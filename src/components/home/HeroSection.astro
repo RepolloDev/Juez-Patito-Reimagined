@@ -3,8 +3,9 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
 ---
 
 <section
-  class="hero-height flex flex-col justify-center lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 relative">
-  <div class="content flex flex-col w-full gap-10 items-center lg:items-start">
+  class="hero-height flex flex-col justify-center lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 relative lg:px-14">
+  <div
+    class="content flex flex-col w-full gap-10 items-center px-5 md:px-10 lg:items-start lg:px-0">
     <h2
       class="text-5xl text-center font-bold max-w-[15ch] md:text-6xl lg:text-start xl:text-7xl xl:max-w-[10ch]">
       <span>Programa y pon tu</span>
@@ -15,7 +16,7 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
         <span class="text-success">go</span>
       </span>
       <span>a</span>
-      <span class="text-primary">jucio</span>
+      <span class="inline-block text-primary">jucio</span>
     </h2>
     <p
       class="text-center max-w-[40ch] md:text-xl md:max-w-[50ch] lg:text-2xl lg:text-start xl:max-w-[32ch]">
@@ -37,11 +38,12 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
   <div
     class="absolute left-0 top-0 -z-10 w-full h-full flex items-center lg:static">
     <div
-      class="rounded-md p-5 h-[90%] w-full flex justify-center items-center opacity-20 lg:bg-base-200 lg:opacity-100 relative">
+      class="h-full lg:h-[90%] w-full flex justify-center items-center opacity-20 lg:bg-base-200 lg:opacity-100 relative lg:rounded-lg overflow-hidden">
       <div class="glass lg:hidden"></div>
       <img
-        class="object-cover w-full h-full md:object-contain"
-        src="/hero-image.png"
+        src="/hero-image.webp"
+        alt="Hero Image"
+        class="w-full h-full object-cover"
       />
     </div>
   </div>

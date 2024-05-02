@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import { isThemeUpdating } from '@stores/themeStore'
 import { useStore } from '@nanostores/react'
 
+// #region Schemes
+
 interface DuckScheme {
   // Circle option
   circleColor: string
@@ -144,6 +146,8 @@ const Schemes: Record<ThemeNames, DuckScheme> = {
   },
 }
 
+// #region Loco Component
+
 interface LogoProps {
   className?: string
   theme?: ThemeNames
@@ -166,6 +170,7 @@ export default function Logo({ className, theme, circle = false }: LogoProps) {
   }, [$updating])
 
   const currentScheme = Schemes[themeState]
+  const viewBox = circle ? "0 0 450 450" : "50 25 375 375"
 
   return (
     <span className={`${className} ${$updating}`}>
@@ -173,7 +178,7 @@ export default function Logo({ className, theme, circle = false }: LogoProps) {
         className="object-contain w-full h-full"
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
-        viewBox="0 0 450 450">
+        viewBox={viewBox}>
         <defs>
           <clipPath id="clip_1">
             <use xlinkHref="#path_1" />

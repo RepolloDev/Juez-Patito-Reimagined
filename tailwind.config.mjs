@@ -9,11 +9,10 @@ export default {
         geist: ['Geist Sans', 'sans-serif'],
         'victor-mono': ['Victor Mono Variable', 'monospace'],
         'major-mono': ['Major Mono Display', 'monospace'],
+        'gloria-hallelujah': ['Gloria Hallelujah', 'cursive'],
       },
     },
   },
-
-  darkMode: 'selector',
 
   plugins: [require('daisyui'), require('@tailwindcss/typography')],
   daisyui: {
