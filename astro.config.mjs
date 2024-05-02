@@ -19,7 +19,7 @@ export default defineConfig({
   compressHTML: true,
 
   // Output to Vercel Serverless
-  output: "server",
+  output: "hybrid",
   adapter: vercelServerless(
     {
       edgeMiddleware: true,
