@@ -1,6 +1,7 @@
 # build output
 dist/
 .vercel/
+.netlify/
 
 # generated types
 .astro/
@@ -25,3 +26,6 @@ pnpm-debug.log*
 .idea/
 
 .vercel
+
+# Local Netlify folder
+.netlify
