@@ -4,6 +4,7 @@ import ThemeSelector from '@components/ThemeSelector'
 import { CaretLeft } from '@phosphor-icons/react'
 import { logIn, isLoggedIn } from '@utils/auth/login'
 
+
 const isUserLogged = await isLoggedIn(Astro.cookies)
 if (isUserLogged) {
   return Astro.redirect('/')

@@ -8,15 +8,10 @@ import vercelServerless from "@astrojs/vercel/serverless";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
-  compressHTML: true,
 
   // Output to Vercel Serverless
   output: "server",
-  adapter: vercelServerless(
-    {
-      edgeMiddleware: true,
-    }
-  ),
+  adapter: vercelServerless(),
 
   // Output to node server
   // output: "server",
