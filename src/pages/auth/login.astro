@@ -1,0 +1,74 @@
+---
+import Layout from '@layouts/Layout.astro'
+import ThemeSelector from '@components/ThemeSelector'
+import { CaretLeft } from '@phosphor-icons/react'
+import { logIn, isLoggedIn } from '@utils/auth/login'
+
+const isUserLogged = await isLoggedIn(Astro.cookies)
+if (isUserLogged) {
+  return Astro.redirect('/')
+}
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData()
+  const loginResponse = await logIn(Astro.cookies, formData)
+  if (!(loginResponse instanceof Error)) {
+    return Astro.redirect('/content/dashboard')
+  }
+}
+---
+
+<Layout title="Juez Patito - Login">
+  <main class="grid grid-cols-2 min-h-screen">
+    <section>
+      <header>
+        <nav class="navbar border-b-2 border-neutral px-5">
+          <div class="navbar-start">
+            <a href="/" class="btn btn-sm btn-outline">
+              <CaretLeft size={24} className="w-5 lg:w-10" weight="duotone" />
+              <span>Volver</span>
+            </a>
+          </div>
+          <div class="navbar-end">
+            <ThemeSelector
+              aling="end"
+              classButton="btn btn-sm btn-square btn-ghost"
+            />
+          </div>
+        </nav>
+      </header>
+      <div class="flex item-center justify-center">
+        <form method="POST" id="login-form" class="form-container">
+          <h1 class="text-center text-3xl font-bold">Iniciar sesión</h1>
+          <div class="form-group">
+            <label class="label" for="email">Nombre de usuario</label>
+            <input
+              class="input input-bordered"
+              type="text"
+              id="username"
+              name="username"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label class="label" for="password">Contraseña</label>
+            <input
+              class="input input-bordered"
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="******************"
+            />
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+              Iniciar sesión
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="bg-neutral"></section>
+  </main>
+</Layout>

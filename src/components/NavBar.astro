@@ -15,10 +15,14 @@ import {
   AddressBook,
 } from '@phosphor-icons/react'
 import LogoText from './LogoText.astro'
-import ThemeSelector from './ThemeSelector.tsx'
-import Dropdown from '@components/Dropdown.astro'
+import Logo from './Logo'
+import ThemeSelector from './ThemeSelector'
+import Dropdown from '@components/Dropdown'
 import Drawer from '@components/Drawer.astro'
-import Collapse from '@components/Collapse.astro'
+import Collapse from '@components/Collapse'
+import { isLoggedIn } from '@utils/auth/login'
+
+const isUserLogged = await isLoggedIn(Astro.cookies)
 
 const navDrawerId = 'nav-drawer'
 type Option = {
@@ -34,7 +38,7 @@ const options: Option[] = [
     name: 'Inicio',
     description: 'Página principal',
     icon: House,
-    href: '/',
+    href: isUserLogged ? '/content/dashboard' : '/',
   },
   {
     name: 'Contenido',
@@ -57,13 +61,13 @@ const options: Option[] = [
         name: 'Ranking',
         description: 'Ranking',
         icon: Ranking,
-        href: '/ranking',
+        href: '/content/ranking',
       },
       {
         name: 'Envios',
         description: 'Envios',
         icon: PaperPlaneTilt,
-        href: '/sends',
+        href: '/content/sends',
       },
     ],
   },
@@ -105,7 +109,10 @@ const options: Option[] = [
 <nav
   class="navbar bg-base-100 px-5 border-b-2 border-b-neutral drawer drawer-end">
   <div class="navbar-start w-[45%]">
-    <LogoText />
+    <a href="/" class="flex gap-2">
+      <Logo client:load className="w-10 h-10 md:w-12 md:h-12" />
+      <LogoText />
+    </a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="flex gap-5">
@@ -114,7 +121,9 @@ const options: Option[] = [
           return (
             <li>
               {!opt.subOptions ? (
-                <a class="btn px-2 btn-ghost items-center justify-center">
+                <a
+                  href={opt.href}
+                  class="btn px-2 btn-ghost items-center justify-center">
                   {opt.icon && (
                     <opt.icon size={16} className="w-4 h-4 inline-block" />
                   )}
@@ -123,14 +132,14 @@ const options: Option[] = [
               ) : (
                 <Dropdown modifier="hover" aling="end">
                   <div
-                    slot="dropdown-button"
+                    slot="button"
                     class="btn px-2 btn-ghost items-center justify-center">
                     {opt.icon && (
                       <opt.icon size={16} className="w-4 h-4 inline-block" />
                     )}
                     {opt.name}
                   </div>
-                  <ul class="menu">
+                  <ul slot="content" class="menu">
                     {opt.subOptions.map((subOpt) => (
                       <li>
                         <a href={subOpt.href}>
@@ -154,7 +163,10 @@ const options: Option[] = [
     </ul>
   </div>
   <Drawer id={navDrawerId} class-header="mb-5" class-content="w-80 md:w-96">
-    <LogoText slot="drawer-header" />
+    <a slot="header" href="/" class="flex gap-2">
+      <Logo client:load className="w-10 h-10 md:w-12 md:h-12" />
+      <LogoText slot="drawer-header" />
+    </a>
     <slot>
       <ul class="w-full flex flex-col gap-2">
         {
@@ -162,7 +174,9 @@ const options: Option[] = [
             return (
               <li>
                 {!opt.subOptions ? (
-                  <a class="btn items-center justify-start w-full">
+                  <a
+                    href={opt.href}
+                    class="btn items-center justify-start w-full">
                     {opt.icon && (
                       <opt.icon size={16} className="w-4 h-4 inline-block" />
                     )}
@@ -171,14 +185,14 @@ const options: Option[] = [
                 ) : (
                   <Collapse
                     type="plus"
-                    class-button="btn items-center justify-start w-full">
-                    <slot slot="collapse-button">
+                    classButton="btn items-center justify-start w-full">
+                    <slot slot="button">
                       {opt.icon && (
                         <opt.icon size={16} className="w-4 h-4 inline-block" />
                       )}
                       {opt.name}
                     </slot>
-                    <ul class="menu border-l-2 border-neutral">
+                    <ul slot="content" class="menu border-l-2 border-neutral">
                       {opt.subOptions.map((subOpt) => (
                         <li>
                           <a href={subOpt.href}>
@@ -202,11 +216,24 @@ const options: Option[] = [
       </ul>
       <hr class="border-neutral my-5" />
       <div class="flex flex-col gap-2">
-        <a href="/auth/login" class="btn btn-neutral btn-outline btn-block"
-          >Iniciar sesión</a
-        >
-        <a href="/auth/register" class="btn btn-accent btn-block">Registrarse</a
-        >
+        {
+          isUserLogged ? (
+            <slot>
+              <a href="/auth/logout" class="btn">
+                Cerrar sesión
+              </a>
+            </slot>
+          ) : (
+            <slot>
+              <a href="/auth/login" class="btn btn-neutral">
+                Iniciar sesión
+              </a>
+              <a href="/auth/register" class="btn btn-accent">
+                Registrarse
+              </a>
+            </slot>
+          )
+        }
       </div>
     </slot>
   </Drawer>
@@ -217,15 +244,29 @@ const options: Option[] = [
       class="btn btn-sm btn-ghost btn-circle"
       ><GithubLogo size={24} className="w-5 lg:w-10" />
     </a>
-    <ThemeSelector client:load />
-    <a
-      href="/auth/login"
-      class="hidden btn btn-neutral btn-sm btn-outline lg:flex">
-      Iniciar sesión
-    </a>
-    <a href="/auth/register" class="hidden btn btn-accent btn-sm lg:flex">
-      Registrarse
-    </a>
+    <ThemeSelector
+      aling="end"
+      classButton="btn btn-sm btn-ghost btn-circle"
+      client:load
+    />
+    {
+      isUserLogged ? (
+        <slot>
+          <a href="/auth/logout" class="btn btn-sm">
+            Cerrar sesión
+          </a>
+        </slot>
+      ) : (
+        <slot>
+          <a href="/auth/login" class="btn btn-neutral btn-sm">
+            Iniciar sesión
+          </a>
+          <a href="/auth/register" class="btn btn-sm btn-accent">
+            Registrarse
+          </a>
+        </slot>
+      )
+    }
     <label
       for={navDrawerId}
       aria-label="open sidebar"

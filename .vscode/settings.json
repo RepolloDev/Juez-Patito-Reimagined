@@ -31,6 +31,8 @@
     "editor.defaultFormatter": "astro-build.astro-vscode"
   },
   "cSpell.words": [
+    "aling",
+    "Alings",
     "astro",
     "astrojs",
     "daisyui",
@@ -38,5 +40,6 @@
     "izquierdo",
     "nanostores",
     "tailwindcss"
-  ]
+  ],
+  "cSpell.enabled": false
 }

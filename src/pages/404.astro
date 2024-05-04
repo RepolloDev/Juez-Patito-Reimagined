@@ -1,0 +1,25 @@
+---
+import Layout from '@layouts/Layout.astro'
+const url = Astro.url
+---
+
+<Layout title="JPR - Página no encontrada">
+  <main
+    class="px-5 min-h-screen bg-base-100 flex flex-col items-center justify-center gap-5 overflow-hidden">
+    <div
+      class="mockup-browser border bg-base-300 object-cover max-w-80 sm:max-w-none">
+      <div class="mockup-browser-toolbar">
+        <div class="input w-min">{url}</div>
+      </div>
+      <div
+        class="flex justify-center px-4 py-16 bg-base-200 text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">
+        404
+      </div>
+    </div>
+    <p class="lg:text-lg max-w-[35ch] md:max-w-[40ch] text-center">
+      La página que estas buscando puede que haya sido eliminada, cambiado de
+      nombre o no está disponible temporalmente.
+    </p>
+    <a href="/" class="btn btn-primary"> Ir al inicio </a>
+  </main>
+</Layout>

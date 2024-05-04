@@ -1,27 +1,16 @@
 ---
 import Layout from '@layouts/Layout.astro'
 import HeroSection from '@components/home/HeroSection.astro'
-import NavBar from '@components/navigator/NavBar.astro'
-import Alert from '@components/Alert.tsx'
-
-export const prerender = true
+import NavBar from '@components/NavBar.astro'
+import Footer from '@components/Footer.astro'
 ---
 
 <Layout title="Juez Patito Reimagined">
   <header class="sticky top-0 w-full z-50">
     <NavBar />
-    <Alert
-      client:load
-      title="Página no oficial"
-      type="info"
-      className="fixed rounded-none py-2"
-      persist
-      id="announcement-page-oficial">
-      Si desea ver la página original y más rápida visite
-      <a href="https://jv.umsa.bo/" class="link">jv.umsa.bo </a>
-    </Alert>
   </header>
   <main>
     <HeroSection />
   </main>
+  <Footer />
 </Layout>
