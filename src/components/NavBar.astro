@@ -1,276 +1,87 @@
 ---
-import {
-  List,
-  GithubLogo,
-  Question,
-  Sparkle,
-  Code,
-  Confetti,
-  House,
-  PaperPlaneTilt,
-  Ranking,
-  DotsThreeCircle,
-  Package,
-  Info,
-  AddressBook,
-} from '@phosphor-icons/react'
-import LogoText from './LogoText.astro'
-import Logo from './Logo'
-import ThemeSelector from './ThemeSelector'
-import Dropdown from '@components/Dropdown'
-import Drawer from '@components/Drawer.astro'
-import Collapse from '@components/Collapse'
-import { isLoggedIn } from '@utils/auth/login'
+import { Icon } from 'astro-icon/components'
+import { navOptions } from '@constants/navOptions'
+import Dropdown from './Dropdown.astro'
+import Button from './Button.astro'
 
-const isUserLogged = await isLoggedIn(Astro.cookies)
-
-const navDrawerId = 'nav-drawer'
-type Option = {
-  name: string
-  description: string
-  icon?: any
-  href?: string
-  subOptions?: Option[]
-}
-
-const options: Option[] = [
-  {
-    name: 'Inicio',
-    description: 'Página principal',
-    icon: House,
-    href: isUserLogged ? '/content/dashboard' : '/',
-  },
-  {
-    name: 'Contenido',
-    description: 'Content',
-    icon: Package,
-    subOptions: [
-      {
-        name: 'Problemas',
-        description: 'Problemas',
-        icon: Code,
-        href: '/content/problems',
-      },
-      {
-        name: 'Concursos',
-        description: 'Concursos',
-        icon: Confetti,
-        href: '/content/contests',
-      },
-      {
-        name: 'Ranking',
-        description: 'Ranking',
-        icon: Ranking,
-        href: '/content/ranking',
-      },
-      {
-        name: 'Envios',
-        description: 'Envios',
-        icon: PaperPlaneTilt,
-        href: '/content/sends',
-      },
-    ],
-  },
-  {
-    name: 'Ayuda',
-    description: 'Ayuda',
-    icon: Sparkle,
-    href: '/help',
-  },
-  {
-    name: 'Más',
-    description: 'Más',
-    icon: DotsThreeCircle,
-    subOptions: [
-      {
-        name: 'Pregunatas frecuentes',
-        description: 'Preguntas frecuentes',
-        icon: Question,
-        href: '/faq',
-      },
-
-      {
-        name: 'Sobre JPR',
-        description: 'Sobre JPR',
-        icon: Info,
-        href: '/about',
-      },
-      {
-        name: 'Contacto',
-        description: 'Contacto',
-        icon: AddressBook,
-        href: '/contact',
-      },
-    ],
-  },
-]
+const drawerId = 'drawer-navbar'
 ---
 
-<nav
-  class="navbar bg-base-100 px-5 border-b-2 border-b-neutral drawer drawer-end">
-  <div class="navbar-start w-[45%]">
-    <a href="/" class="flex gap-2">
-      <Logo client:load className="w-10 h-10 md:w-12 md:h-12" />
-      <LogoText />
-    </a>
+<nav class="navbar drawer drawer-end bg-base-100 px-5">
+  <input id={drawerId} type="checkbox" class="drawer-toggle" />
+  <div class="navbar-start w-[40%]">
+    <slot name="logo" />
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="flex gap-5">
-      {
-        options.map((opt) => {
-          return (
-            <li>
-              {!opt.subOptions ? (
-                <a
-                  href={opt.href}
-                  class="btn px-2 btn-ghost items-center justify-center">
-                  {opt.icon && (
-                    <opt.icon size={16} className="w-4 h-4 inline-block" />
-                  )}
-                  {opt.name}
-                </a>
-              ) : (
-                <Dropdown modifier="hover" aling="end">
-                  <div
-                    slot="button"
-                    class="btn px-2 btn-ghost items-center justify-center">
-                    {opt.icon && (
-                      <opt.icon size={16} className="w-4 h-4 inline-block" />
-                    )}
-                    {opt.name}
-                  </div>
-                  <ul slot="content" class="menu">
-                    {opt.subOptions.map((subOpt) => (
-                      <li>
-                        <a href={subOpt.href}>
-                          {subOpt.icon && (
-                            <subOpt.icon
-                              size={16}
-                              className="w-4 h-4 inline-block"
-                            />
-                          )}
-                          {subOpt.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </Dropdown>
-              )}
-            </li>
-          )
-        })
-      }
-    </ul>
-  </div>
-  <Drawer id={navDrawerId} class-header="mb-5" class-content="w-80 md:w-96">
-    <a slot="header" href="/" class="flex gap-2">
-      <Logo client:load className="w-10 h-10 md:w-12 md:h-12" />
-      <LogoText slot="drawer-header" />
-    </a>
-    <slot>
-      <ul class="w-full flex flex-col gap-2">
-        {
-          options.map((opt) => {
-            return (
-              <li>
-                {!opt.subOptions ? (
-                  <a
-                    href={opt.href}
-                    class="btn items-center justify-start w-full">
-                    {opt.icon && (
-                      <opt.icon size={16} className="w-4 h-4 inline-block" />
-                    )}
-                    {opt.name}
-                  </a>
-                ) : (
-                  <Collapse
-                    type="plus"
-                    classButton="btn items-center justify-start w-full">
-                    <slot slot="button">
-                      {opt.icon && (
-                        <opt.icon size={16} className="w-4 h-4 inline-block" />
-                      )}
-                      {opt.name}
-                    </slot>
-                    <ul slot="content" class="menu border-l-2 border-neutral">
-                      {opt.subOptions.map((subOpt) => (
-                        <li>
-                          <a href={subOpt.href}>
-                            {subOpt.icon && (
-                              <subOpt.icon
-                                size={16}
-                                className="w-4 h-4 inline-block"
-                              />
-                            )}
-                            {subOpt.name}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </Collapse>
-                )}
-              </li>
-            )
-          })
-        }
-      </ul>
-      <hr class="border-neutral my-5" />
-      <div class="flex flex-col gap-2">
-        {
-          isUserLogged ? (
-            <slot>
-              <a href="/auth/logout" class="btn">
-                Cerrar sesión
-              </a>
-            </slot>
-          ) : (
-            <slot>
-              <a href="/auth/login" class="btn btn-neutral">
-                Iniciar sesión
-              </a>
-              <a href="/auth/register" class="btn btn-accent">
-                Registrarse
-              </a>
-            </slot>
-          )
-        }
-      </div>
-    </slot>
-  </Drawer>
-  <div class="navbar-end drawer-content gap-1 ml-auto">
-    <a
-      href="https://github.com/RepolloDev/Juez-Patito-Reimagined"
-      target="_blank"
-      class="btn btn-sm btn-ghost btn-circle"
-      ><GithubLogo size={24} className="w-5 lg:w-10" />
-    </a>
-    <ThemeSelector
-      aling="end"
-      classButton="btn btn-sm btn-ghost btn-circle"
-      client:load
-    />
+  <div class="navbar-center gap-2 hidden lg:flex">
     {
-      isUserLogged ? (
-        <slot>
-          <a href="/auth/logout" class="btn btn-sm">
-            Cerrar sesión
-          </a>
-        </slot>
-      ) : (
-        <slot>
-          <a href="/auth/login" class="btn btn-neutral btn-sm">
-            Iniciar sesión
-          </a>
-          <a href="/auth/register" class="btn btn-sm btn-accent">
-            Registrarse
-          </a>
-        </slot>
-      )
+      navOptions.map((opt) => {
+        if (!opt.subOpts) {
+          return (
+            <Button
+              classIcon="w-5 h-5"
+              class="btn-sm"
+              href={opt.link}
+              icon={opt.icon}>
+              {opt.title}
+            </Button>
+          )
+        }
+        return (
+          <Dropdown
+            classContent="p-2 rounded-box"
+            modifier="hover"
+            classIcon="w-5 h-5"
+            classButton="btn-sm"
+            icon={opt.icon}>
+            <Fragment slot="button">{opt.title}</Fragment>
+            <ul slot="content">
+              {opt.subOpts.map((subOpt) => {
+                return (
+                  <li>
+                    <Button
+                      classIcon="w-5 h-5"
+                      class="btn-sm btn-ghost w-full justify-start"
+                      href={subOpt.link}
+                      icon={subOpt.icon}>
+                      {subOpt.title}
+                    </Button>
+                  </li>
+                )
+              })}
+            </ul>
+          </Dropdown>
+        )
+      })
     }
-    <label
-      for={navDrawerId}
-      aria-label="open sidebar"
-      class="btn btn-sm lg:hidden"><List size={24} className="w-5" /></label
-    >
+  </div>
+  <div class="navbar-end gap-2 ml-auto">
+    <slot name="static-options" />
+    <div class="hidden lg:flex lg:gap-2">
+      <slot name="user-options" class:list={'hidden'} />
+    </div>
+    <label for={drawerId} class="btn btn-sm btn-square drawer-button lg:hidden">
+      <Icon name="list" size={24} />
+    </label>
+  </div>
+  <div class="drawer-side">
+    <label for={drawerId} aria-label="close sidebar" class="drawer-overlay"
+    ></label>
+    <div class="w-80 min-h-full bg-base-200 text-base-content">
+      <div class="navbar flex items-center border-b-2 border-neutral px-5">
+        <div class="w-full flex justify-center">
+          <slot name="logo" />
+        </div>
+        <label
+          for={drawerId}
+          class="drawer-close btn btn-sm btn-square ml-auto drawer-button">
+          <Icon name="x" size={24} />
+        </label>
+      </div>
+      <div class="p-5">
+        <div class="flex flex-col gap-2 mt-2">
+          <slot name="user-options" />
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

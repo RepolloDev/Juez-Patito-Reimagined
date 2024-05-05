@@ -1,6 +1,5 @@
 ---
 import Layout from '@layouts/Layout.astro'
-import NavBar from '@components/NavBar.astro'
 import { isLoggedIn } from '@utils/auth/login'
 
 const isUserLogged = isLoggedIn(Astro.cookies)
@@ -10,9 +9,6 @@ if (!isUserLogged) {
 ---
 
 <Layout title="Juez Patito - Login">
-  <header>
-    <NavBar />
-  </header>
   <main>
     <h2>Dashboard</h2>
   </main>

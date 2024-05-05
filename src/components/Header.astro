@@ -1,0 +1,32 @@
+---
+import Navbar from './Navbar.astro'
+import Button from './Button.astro'
+import UserOptions from './UserOptions.astro'
+import { Icon } from 'astro-icon/components'
+import ThemeSelector from './ThemeSelector.astro'
+import LogoText from './LogoText.astro'
+import LogoSVG from './wrappers/LogoSVG.astro'
+import { navOptions } from '@constants/navOptions'
+---
+
+<header class="sticky top-0 w-full z-10 border-b-2 border-neutral">
+  <Navbar>
+    <a href="/" class="flex items-center gap-2" slot="logo">
+      <LogoSVG circle class="w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14" />
+      <LogoText responsive class="text-3xl md:text-lg" />
+    </a>
+    <Fragment slot="options"> </Fragment>
+    <Fragment slot="static-options">
+      <Button
+        class="btn-sm btn-circle btn-ghost"
+        target="_blank"
+        href="https://github.com/RepolloDev/Juez-Patito-Reimagined">
+        <Icon name="github-logo" size={24} />
+      </Button>
+      <ThemeSelector aling="end" />
+    </Fragment>
+    <Fragment slot="user-options">
+      <UserOptions />
+    </Fragment>
+  </Navbar>
+</header>

@@ -1,0 +1,21 @@
+---
+const Types = {
+  plus: 'collapse-plus',
+  arrow: 'collapse-arrow',
+  default: '',
+} as const
+
+const Modifier = {
+  open: 'collapse-open',
+  close: 'collapse-close',
+  default: '',
+} as const
+
+interface Props {
+  className?: string
+  classButton?: string
+  classContent?: string
+  type?: keyof typeof Types
+  modifier?: keyof typeof Modifier
+}
+---

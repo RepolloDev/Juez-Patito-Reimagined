@@ -1,0 +1,32 @@
+---
+import Button from './Button.astro'
+import { isLoggedIn } from '@utils/auth/login'
+const isUserLoggedIn = await isLoggedIn(Astro.cookies)
+
+const urls = {
+  login: '/auth/login',
+  register: '/auth/register',
+  logout: '/auth/logout',
+} as const
+---
+
+{
+  isUserLoggedIn ? (
+    <Button
+      classIcon="w-5 h-5"
+      icon="sign-out"
+      href={urls.logout}
+      class="btn btn-sm btn-neutral">
+      Cerrar sesión
+    </Button>
+  ) : (
+    <Fragment>
+      <Button href={urls.login} class="lg:btn-sm btn-neutral lg:btn-outline">
+        Iniciar sesión
+      </Button>
+      <Button href={urls.register} class="lg:btn-sm btn-accent">
+        Registrarse
+      </Button>
+    </Fragment>
+  )
+}

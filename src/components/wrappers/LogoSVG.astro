@@ -1,0 +1,10 @@
+---
+import Logo from '@components/client/Logo'
+interface Props {
+  class?: string
+  circle?: boolean
+}
+const { class: className, circle } = Astro.props
+---
+
+<Logo client:only="react" className={className} circle={circle} />

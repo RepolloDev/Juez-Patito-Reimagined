@@ -1,1 +1,1 @@
-export const ID_SESSION_KEY = 'PHPSESSID';
+export const ID_SESSION_KEY = 'PHPSESSID'

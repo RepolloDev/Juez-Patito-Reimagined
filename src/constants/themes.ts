@@ -101,3 +101,5 @@ export const defaultTheme = light
 export const themeSchemes = Object.values(Themes).map((theme) => ({
   [theme.themeName]: theme.scheme,
 }))
+
+export const dataThemeKey = 'data-theme'

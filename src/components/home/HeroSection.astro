@@ -1,26 +1,15 @@
 ---
-import { ArrowRight, DiceFive } from '@phosphor-icons/react'
+import Button from '@components/Button.astro'
+import { Image } from 'astro:assets'
+import HeroImage from '@assets/images/hero-image.webp'
+import Title from './Title.astro'
 ---
 
 <section
-  class="hero-height flex flex-col justify-center lg:grid lg:grid-cols-2 lg:items-center lg:gap-10 relative lg:px-14">
+  class="min-h-[max(90vh,_600px)] flex items-center relative lg:grid lg:grid-cols-2 lg:gap-10 lg:px-14">
   <div
-    class="content flex flex-col w-full gap-10 items-center px-5 md:px-10 lg:items-start lg:px-0">
-    <h2
-      class="text-5xl text-center font-bold max-w-[15ch] md:text-6xl lg:text-start xl:text-7xl xl:max-w-[10ch]">
-      <span>Programa y</span>
-      <span class="inline-block">pon tu</span>
-      <span
-        class="text-4xl inline-flex bg-base-300 rounded-md p-1 font-victor-mono font-bold md:text-5xl lg:text-6xl">
-        <span class="text-error">Có</span>
-        <span class="text-warning">di</span>
-        <span class="text-success">go</span>
-      </span>
-      <span class="inline-block">
-        <span>a</span>
-        <span class="inline-block text-primary">jucio</span>
-      </span>
-    </h2>
+    class="flex flex-col w-full gap-10 items-center px-5 md:px-10 lg:items-start lg:px-0">
+    <Title />
     <p
       class="text-center max-w-[40ch] md:text-xl md:max-w-[50ch] lg:text-2xl lg:text-start xl:max-w-[32ch]">
       Una plataforma académica abierta a todo público con problemas de
@@ -28,23 +17,26 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
     </p>
     <div
       class="action-section flex justify-center gap-10 md:gap-20 lg:justify-start lg:gap-10">
-      <a href="/auth/register" class="btn btn-accent md:btn-lg">
-        <span> Comenzar ahora </span>
-        <ArrowRight />
-      </a>
-      <a href="/problems/random" class="btn btn-secondary md:btn-lg">
-        <DiceFive size="24" weight="duotone" />
-        <span> Random </span>
-      </a>
+      <Button
+        icon="arrow-circle-up-right"
+        href="/auth/register"
+        class="btn btn-accent md:btn-lg">
+        Comenzar ahora
+      </Button>
+      <Button
+        icon="dice-five"
+        href="/problems/random"
+        class="btn btn-secondary md:btn-lg">
+        Random
+      </Button>
     </div>
   </div>
   <div
     class="absolute left-0 top-0 -z-10 w-full h-full flex items-center lg:static">
     <div
-      class="h-full lg:h-[90%] w-full flex justify-center items-center opacity-20 lg:bg-base-200 lg:opacity-100 relative lg:rounded-lg overflow-hidden">
-      <div class="glass lg:hidden"></div>
-      <img
-        src="/hero-image.webp"
+      class="h-full lg:h-[90%] w-full flex justify-center items-center opacity-20 lg:bg-base-200 lg:opacity-100 relative lg:rounded-lg overflow-hidden glass">
+      <Image
+        src={HeroImage}
         alt="Hero Image"
         class="w-full h-full object-cover"
       />
@@ -53,16 +45,20 @@ import { ArrowRight, DiceFive } from '@phosphor-icons/react'
 </section>
 
 <style>
-  .glass {
-    backdrop-filter: blur(5px);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .hero-height {
-    height: max(90dvh, 600px);
+  @media (max-width: theme('screens.lg')) {
+    .glass::after {
+      content: '';
+      position: absolute;
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 500;
+    }
   }
 </style>

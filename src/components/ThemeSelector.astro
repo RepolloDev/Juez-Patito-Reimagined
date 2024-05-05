@@ -1,0 +1,78 @@
+---
+import Dropdown, { type Props as DropdownProps } from './Dropdown.astro'
+import { Themes } from '@constants/themes'
+import { Icon } from 'astro-icon/components'
+import Button from './Button.astro'
+
+const themes = Object.entries(Themes).map(([key, value]) => {
+  return {
+    theme: key,
+    name: value.name,
+  }
+})
+
+type Props = DropdownProps
+const props = Astro.props
+---
+
+<Dropdown
+  classContent="p-2 rounded-lg mt-2 w-32"
+  classButton="btn-sm btn-circle btn-ghost"
+  {...props}>
+  <Icon slot="button" name="palette" size={24} />
+  <ul slot="content" class="grid grid-cols-1 gap-1">
+    {
+      themes.map((theme) => {
+        return (
+          <li>
+            <Button
+              icon="check-square"
+              classIcon="w-6 h-6"
+              data-set-theme={theme.theme}
+              data-theme={theme.theme}
+              class="theme-changer border-2 w-full border-neutral hover:border-neutral btn-sm min-h-10">
+              <span class="flex w-24 items-center">
+                <span>{theme.name}</span>
+                <span class="grid grid-cols-4 h-5 gap-0.5 ml-auto">
+                  <span class="h-full w-1.5 bg-primary rounded-lg" />
+                  <span class="h-full w-1.5 bg-secondary rounded-lg" />
+                  <span class="h-full w-1.5 bg-accent rounded-lg" />
+                  <span class="h-full w-1.5 bg-neutral rounded-lg" />
+                </span>
+              </span>
+            </Button>
+          </li>
+        )
+      })
+    }
+  </ul>
+</Dropdown>
+
+<script>
+  import { themeStore } from '@stores/themeStore'
+  import { dataThemeKey } from '@constants/themes'
+  import type { ThemeNames } from '@constants/themes'
+
+  const buttons = document.querySelectorAll('.theme-changer')
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const buttonTheme = button.getAttribute(dataThemeKey)
+      if (buttonTheme) {
+        themeStore.set(buttonTheme as ThemeNames)
+      }
+    })
+  })
+  themeStore.subscribe((theme) => {
+    buttons.forEach((button) => {
+      // if (button.getAttribute(dataThemeKey) === theme) => icon.classList.remove('hidden')
+      const icon = button.querySelector('.icon')
+      if (icon) {
+        if (button.getAttribute(dataThemeKey) === theme) {
+          icon.classList.remove('opacity-0')
+        } else {
+          icon.classList.add('opacity-0')
+        }
+      }
+    })
+  })
+</script>

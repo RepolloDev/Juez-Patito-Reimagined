@@ -1,0 +1,56 @@
+---
+import Button from './Button.astro'
+
+const Alings = {
+  left: 'dropdown-left',
+  right: 'dropdown-right',
+  bottom: 'dropdown-bottom',
+  top: 'dropdown-top',
+  end: 'dropdown-end',
+  def: false,
+} as const
+
+const Modifiers = {
+  hover: 'dropdown-hover',
+  open: 'dropdown-open',
+  def: false,
+} as const
+
+export interface Props {
+  class?: string
+  classButton?: string
+  classContent?: string
+  aling?: keyof typeof Alings
+  modifier?: keyof typeof Modifiers
+  icon?: string
+  classIcon?: string
+}
+
+const {
+  aling,
+  modifier,
+  classButton,
+  classContent,
+  class: className,
+  icon,
+  classIcon,
+} = Astro.props
+---
+
+<div
+  class="dropdown"
+  class:list={[
+    Alings[aling || 'def'],
+    Modifiers[modifier || 'def'],
+    className,
+  ]}>
+  <Button classIcon={classIcon} icon={icon} class:list={[classButton]}>
+    <slot name="button" />
+  </Button>
+  <div
+    tab-index={0}
+    class="dropdown-content z-[1] bg-base-100 w-56"
+    class:list={[classContent]}>
+    <slot name="content" />
+  </div>
+</div>

@@ -1,0 +1,30 @@
+---
+const Align = {
+  top: 'tooltop-top',
+  right: 'tooltip-right',
+  bottom: 'tooltip-bottom',
+  left: 'tooltip-left',
+  def: false,
+} as const
+
+const Modifier = {
+  open: 'tooltip-small',
+  def: false,
+} as const
+
+interface Props {
+  modifier?: keyof typeof Modifier
+  align?: keyof typeof Align
+  class?: string
+  tip: string
+}
+
+const { modifier, align, class: className, tip } = Astro.props
+---
+
+<div
+  class="tooltip"
+  class:list={[className, Align[align || 'def'], Modifier[modifier || 'def']]}
+  data-tip={tip}>
+  <slot />
+</div>

@@ -1,13 +1,33 @@
 ---
-import Logo from '@components/Logo'
+import { Icon } from 'astro-icon/components'
+import Tooltip from '@components/Tooltip.astro'
+import LogoText from './LogoText.astro'
 ---
 
-<footer class="footer px-10 py-4 bg-neutral text-neutral-content">
-  <aside class="items-center grid-flow-col">
-    <Logo client:load circle className="w-10 h-10" />
-    <p>Juez Patito Reimagined<br />Una reconstrucción Front-End</p>
+<footer class="footer footer-center p-10 bg-neutral text-neutral-content">
+  <aside>
+    <LogoText abbreviated class="text-2xl md:text-3xl lg:text-4xl" />
+    <p class="font-bold">
+      Juez Patito Reimagined. <br />Una reconstrucción Front-End
+    </p>
   </aside>
-  <nav class="md:place-self-center md:justify-self-end">
-    <!-- Opcioens -->
+  <nav>
+    <div class="grid grid-flow-col gap-4">
+      <a href="https://jv.umsa.bo/oj/" target="_blank">
+        <Tooltip tip="pagina original">
+          <Icon name="browser" size={24} class="fill-current" />
+        </Tooltip>
+      </a>
+      <a type="email" href="mailto:samuel.loza26@gmail.com">
+        <Tooltip tip="Mandar email">
+          <Icon name="mailbox" size={24} class="fill-current" />
+        </Tooltip>
+      </a>
+      <a href="https://t.me/zsams" target="_blank">
+        <Tooltip tip="telegram">
+          <Icon name="telegram-logo" size={24} class="fill-current" />
+        </Tooltip>
+      </a>
+    </div>
   </nav>
 </footer>
