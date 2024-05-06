@@ -1,5 +1,161 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import ThemeSelector from '@components/ThemeSelector.astro'
+import Button from '@components/Button.astro'
+import Footer from '@components/Footer.astro'
+import { logIn, isLoggedIn } from '@utils/auth/login'
+
+const isUserLogged = await isLoggedIn(Astro.cookies)
+if (isUserLogged) {
+  return Astro.redirect('/content/dashboard')
+}
 ---
 
-<Layout title="Juez Patito - Login">registrar usuario</Layout>
+<Layout title="Juez Patito - Login">
+  <header class="sticky bg-neutral top-0 navbar px-5 flex w-full">
+    <a
+      href="/"
+      class="btn btn-sm btn-neutral md:btn-md border-2 border-neutral-content">
+      Volver
+    </a>
+    <ThemeSelector
+      classButton="btn-neutral md:btn-md"
+      class="ml-auto"
+      aling="end"
+    />
+  </header>
+  <main
+    class="min-h-screen w-full bg-base-100 md:grid md:grid-cols-[40%,_60%] lg:grid-cols-2 overflow-hidden">
+    <section class="container h-24 min-w-full hidden md:block md:h-full">
+    </section>
+    <section
+      class="bg-base-100 p-6 sm:p-10 lg:px-24 xl:px-32 xl:py-16 flex flex-col md:justify-center">
+      <div class="flex flex-col gap-2">
+        <h2 class="font-bold text-4xl">Registrase</h2>
+        <p class="text-lg">
+          ¡Bienvenido! Por favor, llena los campos para registrarte y empezar a
+          disfrutar del contenido.
+        </p>
+      </div>
+      <form method="POST" class="form my-10">
+        <div class="inputs-section mb-10">
+          <div class="form-control">
+            <label for="name" class="label">Nombres</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="input input-bordered"
+              placeholder="Ej. Juanito"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="lastname" class="label">Apellidos</label>
+            <input
+              type="text"
+              id="lastname"
+              name="lastname"
+              class="input input-bordered"
+              placeholder="Ej. Alcachofa"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="nickname" class="label">Nombre de usuario</label>
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              class="input input-bordered"
+              placeholder="Ej. Juanito_Alca123"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="email" class="label">Correo electrónico</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input input-bordered"
+              placeholder="Ej. jalcachofa@ejemplo.com"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="email2" class="label"
+              >Confirma tu correo electrónico</label
+            >
+            <input
+              type="email"
+              id="email2"
+              name="email2"
+              class="input input-bordered"
+              placeholder="Ej. jalcachofa@ejemplo.com"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="email" class="label">Contraseña</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="input input-bordered"
+              placeholder="Ej. ********"
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="email" class="label">Confirma tu contraseña</label>
+            <input
+              type="password"
+              id="password2"
+              name="password2"
+              class="input input-bordered"
+              placeholder="Ej. ********"
+              required
+            />
+          </div>
+        </div>
+        <div class="buttons-section grid grid-cols-2 gap-5">
+          <Button type="submit" class="btn btn-accent">Registrarse</Button>
+          <a href="/auth/login" class="btn btn-neutral">Iniciar sesión</a>
+        </div>
+      </form>
+    </section>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .container {
+    --r: 56px; /* control the size */
+    --c1: theme(colors.neutral) /*color 1*/ 99%, #0000 101%;
+    --c2: theme(colors.neutral-content) /*color 2*/ 99%, #0000 101%;
+
+    --s: calc(var(--r) * 0.866); /* .866 = cos(30deg) */
+    --g0: radial-gradient(var(--r), var(--c1));
+    --g1: radial-gradient(var(--r), var(--c2));
+    --f: radial-gradient(var(--r) at calc(100% + var(--s)) 50%, var(--c1));
+    --p: radial-gradient(var(--r) at 100% 50%, var(--c2));
+    background:
+      var(--f) 0 calc(-5 * var(--r) / 2),
+      var(--f) calc(-2 * var(--s)) calc(var(--r) / 2),
+      var(--p) 0 calc(-2 * var(--r)),
+      var(--g0) var(--s) calc(-5 * var(--r) / 2),
+      var(--g1) var(--s) calc(5 * var(--r) / 2),
+      radial-gradient(var(--r) at 100% 100%, var(--c1)) 0 calc(-1 * var(--r)),
+      radial-gradient(var(--r) at 0% 50%, var(--c1)) 0 calc(-4 * var(--r)),
+      var(--g1) calc(-1 * var(--s)) calc(-7 * var(--r) / 2),
+      var(--g0) calc(-1 * var(--s)) calc(-5 * var(--r) / 2),
+      var(--p) calc(-2 * var(--s)) var(--r),
+      var(--g0) calc(-1 * var(--s)) calc(var(--r) / 2),
+      var(--g1) calc(-1 * var(--s)) calc(var(--r) / -2),
+      var(--g0) 0 calc(-1 * var(--r)),
+      var(--g1) var(--s) calc(var(--r) / -2),
+      var(--g0) var(--s) calc(var(--r) / 2) theme(colors.neutral-content); /*color 2 again here */
+    background-size: calc(4 * var(--s)) calc(6 * var(--r));
+  }
+</style>

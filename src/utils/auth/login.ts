@@ -54,7 +54,7 @@ export async function logIn(cookies: AstroCookies, formData: FormData) {
 export async function isLoggedIn(cookies: AstroCookies) {
   const sessionID = await getSessionID(cookies)
   if (sessionID) {
-    const fetchURL = 'https://jv.umsa.bo/oj/submitpage.php?id=1000'
+    const fetchURL = 'https://jv.umsa.bo/oj/submitpage.php'
     const formattedSessionID = await formatSessionID(sessionID)
     const response = await fetch(fetchURL, {
       method: 'GET',

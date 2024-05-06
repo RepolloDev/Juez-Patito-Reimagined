@@ -2,7 +2,7 @@
 import Layout from '@layouts/Layout.astro'
 import ThemeSelector from '@components/ThemeSelector.astro'
 import Button from '@components/Button.astro'
-
+import Footer from '@components/Footer.astro'
 import { logIn, isLoggedIn } from '@utils/auth/login'
 
 const isUserLogged = await isLoggedIn(Astro.cookies)
@@ -20,23 +20,17 @@ if (Astro.request.method === 'POST') {
 ---
 
 <Layout title="Juez Patito - Login">
+  <header class="sticky bg-neutral top-0 navbar px-5 w-full">
+    <a href="/" class="btn btn-sm btn-neutral border-2 border-neutral-content">
+      Volver
+    </a>
+    <ThemeSelector classButton="btn-neutral" class="ml-auto" aling="end" />
+  </header>
   <main
-    class="min-h-screen w-full relative bg-base-100 grid md:grid-cols-[60%,_40%] lg:grid-cols-2 overflow-hidden">
+    class="min-h-screen w-full bg-base-100 grid md:grid-cols-[60%,_40%] lg:grid-cols-2 overflow-hidden">
     <section
       class="bg-base-100 p-6 sm:p-10 lg:px-24 xl:px-32 xl:py-16 flex flex-col md:justify-center">
       <div class="flex flex-col gap-2">
-        <header class="absolute top-0 left-0 p-2 sm:p-5 md:px-10 flex w-full">
-          <a
-            href="/"
-            class="btn btn-sm btn-neutral md:btn-md border-2 border-neutral-content md:border-transparent">
-            Volver
-          </a>
-          <ThemeSelector
-            classButton="btn-neutral md:btn-md"
-            class="ml-auto"
-            aling="end"
-          />
-        </header>
         <h2 class="font-bold text-4xl">Iniciar sesión</h2>
         <p class="text-lg">
           Bienvenido a Juez Patito, por favor inicia sesión para continuar.
@@ -45,7 +39,7 @@ if (Astro.request.method === 'POST') {
       <form method="POST" class="form my-10">
         <div class="inputs-section mb-10">
           <div class="form-control">
-            <label for="email" class="label">Nombre de usuario</label>
+            <label for="username" class="label">Nombre de usuario</label>
             <input
               type="text"
               id="username"
@@ -78,30 +72,33 @@ if (Astro.request.method === 'POST') {
         >
       </span>
     </section>
-    <section class="container -order-1 h-24 min-w-full md:h-full md:order-last">
+    <section
+      class="container hidden md:block h-24 min-w-full md:h-full md:order-last">
     </section>
   </main>
+  <Footer />
 </Layout>
 
 <style>
   .container {
-    --s: 70px; /* control the size */
-    --c: theme(colors.neutral-content);
-    --b: theme(colors.neutral);
+    --s: 200px; /* control the size */
+    --c: theme(colors.neutral-content); /* first color */
 
-    --_l: #0000 46%, var(--c) 47% 53%, #0000 54%;
+    --_g: #0000 8%, var(--c) 0 17%, #0000 0 58%;
     background:
-      radial-gradient(100% 100% at 100% 100%, var(--_l)) var(--s) var(--s),
-      radial-gradient(100% 100% at 0 0, var(--_l)) var(--s) var(--s),
-      radial-gradient(
-          100% 100%,
-          #0000 22%,
-          var(--c) 23% 29%,
-          #0000 30% 34%,
-          var(--c) 35% 41%,
-          #0000 42%
-        )
-        var(--b);
-    background-size: calc(var(--s) * 2) calc(var(--s) * 2);
+      linear-gradient(135deg, #0000 20.5%, var(--c) 0 29.5%, #0000 0) 0
+        calc(var(--s) / 4),
+      linear-gradient(45deg, var(--_g)) calc(var(--s) / 2) 0,
+      linear-gradient(135deg, var(--_g), var(--c) 0 67%, #0000 0),
+      linear-gradient(
+        45deg,
+        var(--_g),
+        var(--c) 0 67%,
+        #0000 0 83%,
+        var(--c) 0 92%,
+        #0000 0
+      ),
+      theme(colors.neutral); /* second color */
+    background-size: var(--s) var(--s);
   }
 </style>

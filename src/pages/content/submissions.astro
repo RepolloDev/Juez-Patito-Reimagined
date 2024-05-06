@@ -1,9 +1,15 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import Header from '@components/Header.astro'
+import Footer from '@components/Footer.astro'
 ---
 
-<Layout title="Juez Patito - Login">
-  <main>
-    <h2>Envios</h2>
+<Layout title="Juez Patito Reimagined">
+  <Header />
+  <main class="h-screen bg-base-200">
+    <div class="w-full h-full flex items-center justify-center">
+      <h1 class="text-center text-9xl">Envios</h1>
+    </div>
   </main>
+  <Footer />
 </Layout>
