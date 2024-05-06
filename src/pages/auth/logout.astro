@@ -1,8 +1,6 @@
 ---
 import { logOut } from '@utils/auth/login'
 
-logOut(Astro.cookies)
+await logOut(Astro.cookies)
 return Astro.redirect('/')
 ---
-
-LogOut

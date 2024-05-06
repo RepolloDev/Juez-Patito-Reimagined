@@ -13,12 +13,11 @@ const themes = Object.entries(Themes).map(([key, value]) => {
 
 type Props = DropdownProps
 const props = Astro.props
+props.classContent = 'p-2 rounded-lg mt-2 w-32' + props.classContent
+props.classButton = 'btn-sm btn-circle btn-ghost' + props.classButton
 ---
 
-<Dropdown
-  classContent="p-2 rounded-lg mt-2 w-32"
-  classButton="btn-sm btn-circle btn-ghost"
-  {...props}>
+<Dropdown {...props}>
   <Icon slot="button" name="palette" size={24} />
   <ul slot="content" class="grid grid-cols-1 gap-1">
     {

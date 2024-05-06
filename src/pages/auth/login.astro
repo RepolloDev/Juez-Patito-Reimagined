@@ -1,5 +1,8 @@
 ---
 import Layout from '@layouts/Layout.astro'
+import ThemeSelector from '@components/ThemeSelector.astro'
+import Button from '@components/Button.astro'
+
 import { logIn, isLoggedIn } from '@utils/auth/login'
 
 const isUserLogged = await isLoggedIn(Astro.cookies)
@@ -17,40 +20,88 @@ if (Astro.request.method === 'POST') {
 ---
 
 <Layout title="Juez Patito - Login">
-  <main class="grid grid-cols-2 min-h-screen">
-    <section>
-      <div class="flex item-center justify-center">
-        <form method="POST" id="login-form" class="form-container">
-          <h1 class="text-center text-3xl font-bold">Iniciar sesión</h1>
-          <div class="form-group">
-            <label class="label" for="email">Nombre de usuario</label>
+  <main
+    class="min-h-screen w-full relative bg-base-100 grid md:grid-cols-[60%,_40%] lg:grid-cols-2 overflow-hidden">
+    <section
+      class="bg-base-100 p-6 sm:p-10 lg:px-24 xl:px-32 xl:py-16 flex flex-col md:justify-center">
+      <div class="flex flex-col gap-2">
+        <header class="absolute top-0 left-0 p-2 sm:p-5 md:px-10 flex w-full">
+          <a
+            href="/"
+            class="btn btn-sm btn-neutral md:btn-md border-2 border-neutral-content md:border-transparent">
+            Volver
+          </a>
+          <ThemeSelector
+            classButton="btn-neutral md:btn-md"
+            class="ml-auto"
+            aling="end"
+          />
+        </header>
+        <h2 class="font-bold text-4xl">Iniciar sesión</h2>
+        <p class="text-lg">
+          Bienvenido a Juez Patito, por favor inicia sesión para continuar.
+        </p>
+      </div>
+      <form method="POST" class="form my-10">
+        <div class="inputs-section mb-10">
+          <div class="form-control">
+            <label for="email" class="label">Nombre de usuario</label>
             <input
-              class="input input-bordered"
               type="text"
               id="username"
               name="username"
+              class="input input-bordered"
+              placeholder="Ej. eljuezpatito123"
               required
             />
           </div>
-          <div class="form-group">
-            <label class="label" for="password">Contraseña</label>
+          <div class="form-control">
+            <label for="password" class="label">Contraseña</label>
             <input
-              class="input input-bordered"
               type="password"
               id="password"
               name="password"
+              class="input input-bordered"
+              placeholder="********"
               required
-              placeholder="******************"
             />
           </div>
-          <div class="form-group">
-            <button class="btn btn-primary" type="submit">
-              Iniciar sesión
-            </button>
-          </div>
-        </form>
-      </div>
+        </div>
+        <div class="buttons-section grid grid-cols-2 gap-5">
+          <Button type="submit" class="btn btn-accent">Iniciar sesión</Button>
+          <a href="/auth/register" class="btn btn-neutral">Regístrase</a>
+        </div>
+      </form>
+      <span class="text-center">
+        <a href="/auth/forgot-password" class="link"
+          >¿Olvidaste tu contraseña?</a
+        >
+      </span>
     </section>
-    <section class="bg-neutral"></section>
+    <section class="container -order-1 h-24 min-w-full md:h-full md:order-last">
+    </section>
   </main>
 </Layout>
+
+<style>
+  .container {
+    --s: 70px; /* control the size */
+    --c: theme(colors.neutral-content);
+    --b: theme(colors.neutral);
+
+    --_l: #0000 46%, var(--c) 47% 53%, #0000 54%;
+    background:
+      radial-gradient(100% 100% at 100% 100%, var(--_l)) var(--s) var(--s),
+      radial-gradient(100% 100% at 0 0, var(--_l)) var(--s) var(--s),
+      radial-gradient(
+          100% 100%,
+          #0000 22%,
+          var(--c) 23% 29%,
+          #0000 30% 34%,
+          var(--c) 35% 41%,
+          #0000 42%
+        )
+        var(--b);
+    background-size: calc(var(--s) * 2) calc(var(--s) * 2);
+  }
+</style>

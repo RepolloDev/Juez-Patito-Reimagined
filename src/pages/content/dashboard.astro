@@ -2,9 +2,9 @@
 import Layout from '@layouts/Layout.astro'
 import { isLoggedIn } from '@utils/auth/login'
 
-const isUserLogged = isLoggedIn(Astro.cookies)
+const isUserLogged = await isLoggedIn(Astro.cookies)
 if (!isUserLogged) {
-  return Astro.redirect('/login')
+  return Astro.redirect('/auth/login')
 }
 ---
 

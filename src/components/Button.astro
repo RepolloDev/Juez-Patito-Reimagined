@@ -7,9 +7,10 @@ interface Props {
   classIcon?: string
   class?: string
   target?: string
+  type?: 'button' | 'submit' | 'reset'
 }
 
-const { href, icon, class: className, classIcon, ...props } = Astro.props
+const { href, icon, class: className, classIcon, type, ...props } = Astro.props
 ---
 
 {
@@ -21,7 +22,7 @@ const { href, icon, class: className, classIcon, ...props } = Astro.props
       <slot />
     </a>
   ) : (
-    <button class="btn" class:list={[className]} {...props}>
+    <button class="btn" class:list={[className]} type={type} {...props}>
       {icon && (
         <Icon name={icon} class="icon" size={32} class:list={[classIcon]} />
       )}
