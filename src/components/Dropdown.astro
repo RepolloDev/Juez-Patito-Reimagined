@@ -44,7 +44,7 @@ const {
     Modifiers[modifier || 'def'],
     className,
   ]}>
-  <Button classIcon={classIcon} icon={icon} class:list={[classButton]}>
+  <Button classIcon={classIcon} icon={icon} class={classButton}>
     <slot name="button" />
   </Button>
   <div

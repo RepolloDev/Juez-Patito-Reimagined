@@ -13,8 +13,8 @@ const themes = Object.entries(Themes).map(([key, value]) => {
 
 type Props = DropdownProps
 const props = Astro.props
-props.classContent = 'p-2 rounded-lg mt-2 w-32' + props.classContent
-props.classButton = 'btn-sm btn-circle btn-ghost' + props.classButton
+props.classContent = 'p-2 rounded-lg mt-2 w-32' + (props.classContent || '')
+props.classButton = 'btn-sm btn-circle btn-ghost' + (props.classButton || '')
 ---
 
 <Dropdown {...props}>
