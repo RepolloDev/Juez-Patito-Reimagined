@@ -17,9 +17,10 @@ const { title } = Astro.props
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content="Juez Patito Reimagined es una reconstrucción FrontEnd de una página del mismo, una alternativa moderna con un diseño fresco y renovado" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href="https://jpr.vercel.app/" />
     <meta name="generator" content={Astro.generator} />
     <script src="../scripts/changeTheme.js"></script>
     <title>{title}</title>
@@ -28,6 +29,11 @@ const { title } = Astro.props
     <style is:global>
       html {
         font-family: 'Geist Sans', sans-serif;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
       }
       code {
         font-family: 'Victor Mono Variable', monospace;
