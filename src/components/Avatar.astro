@@ -1,0 +1,21 @@
+---
+import { createAvatar } from '@dicebear/core'
+import { notionistsNeutral } from '@dicebear/collection'
+
+interface Props {
+  name: string
+  class?: string
+  size?: number
+}
+
+const { name, class: className, size } = Astro.props
+
+const avatar = createAvatar(notionistsNeutral, {
+  seed: name,
+  size: size || 64,
+})
+
+const svg = avatar.toDataUriSync()
+---
+
+<img src={svg} alt={`${name} avatar`} class:list={[className]} />

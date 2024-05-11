@@ -3,7 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import ThemeSelector from '@components/ThemeSelector.astro'
 import Button from '@components/Button.astro'
 import Footer from '@components/Footer.astro'
-import { logIn, isLoggedIn } from '@utils/auth/login'
+import { isLoggedIn } from '@utils/auth/login'
 
 const isUserLogged = await isLoggedIn(Astro.cookies)
 if (isUserLogged) {
