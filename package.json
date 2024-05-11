@@ -19,6 +19,8 @@
     "@astrojs/react": "^3.3.2",
     "@astrojs/tailwind": "^5.1.0",
     "@astrojs/vercel": "^7.5.4",
+    "@dicebear/collection": "^8.0.1",
+    "@dicebear/core": "^8.0.1",
     "@fontsource-variable/victor-mono": "^5.0.5",
     "@fontsource/geist-sans": "^5.0.3",
     "@fontsource/gloria-hallelujah": "^5.0.19",
@@ -39,6 +41,7 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
+    "cssnano": "^7.0.1",
     "daisyui": "^4.10.5",
     "prettier": "3.2.5",
     "prettier-plugin-astro": "^0.13.0"
