@@ -46,32 +46,3 @@ props.classButton = 'btn-sm btn-circle btn-ghost' + (props.classButton || '')
     }
   </ul>
 </Dropdown>
-
-<script>
-  import { themeStore } from '@stores/themeStore'
-  import { dataThemeKey } from '@constants/themes'
-  import type { ThemeNames } from '@constants/themes'
-
-  const buttons = document.querySelectorAll('.theme-changer')
-  buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-      const buttonTheme = button.getAttribute(dataThemeKey)
-      if (buttonTheme) {
-        themeStore.set(buttonTheme as ThemeNames)
-      }
-    })
-  })
-  themeStore.subscribe((theme) => {
-    buttons.forEach((button) => {
-      // if (button.getAttribute(dataThemeKey) === theme) => icon.classList.remove('hidden')
-      const icon = button.querySelector('.icon')
-      if (icon) {
-        if (button.getAttribute(dataThemeKey) === theme) {
-          icon.classList.remove('opacity-0')
-        } else {
-          icon.classList.add('opacity-0')
-        }
-      }
-    })
-  })
-</script>

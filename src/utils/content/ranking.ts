@@ -22,9 +22,3 @@ export async function getRankingPage(page: number): Promise<UserRank[]> {
   const end = start + 100
   return response.slice(start, end)
 }
-
-// Retornar el número de páginas
-export async function getNroRankingPages() {
-  const response = await getRakingList()
-  return Math.ceil(response.length / 100)
-}
