@@ -1,7 +1,9 @@
 ---
 import Button from './Button.astro'
 import { isLoggedIn } from '@utils/auth/login'
-const isUserLoggedIn = await isLoggedIn(Astro.cookies)
+
+// const isUserLoggedIn = await isLoggedIn(Astro.cookies)
+const isUserLoggedIn = true
 
 const urls = {
   login: '/auth/login',

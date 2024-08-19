@@ -67,6 +67,8 @@ export async function isLoggedIn(cookies: AstroCookies) {
   return false
 }
 
+
+
 export async function logOut(cookies: AstroCookies) {
   // Para ambos casos se elimina la cookie de sesión
   const sessionID = await getSessionID(cookies)

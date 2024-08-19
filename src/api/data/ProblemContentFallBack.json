@@ -1,0 +1,20 @@
+{
+  "id": "1s",
+  "name": "Sum of Two Numbers",
+  "submissionCound": 150,
+  "submissionAcceptedCound": 120,
+  "limits": {
+    "memory": 256,
+    "time": 1000
+  },
+  "description": "Given two integers, return their sum.",
+  "input": {
+    "description": "Two integers separated by a space.",
+    "example": "3 5"
+  },
+  "ouput": {
+    "description": "A single integer representing the sum of the two numbers.",
+    "example": "8"
+  },
+  "helpNote": "Ensure that the input integers are within the range of -1000 to 1000."
+}

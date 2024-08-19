@@ -1,0 +1,82 @@
+[
+  {
+    "id": "official001",
+    "name": "National Programming Championship"
+  },
+  {
+    "id": "official002",
+    "name": "International Coding Olympiad"
+  },
+  {
+    "id": "official003",
+    "name": "University Hackathon"
+  },
+  {
+    "id": "official004",
+    "name": "Global AI Challenge"
+  },
+  {
+    "id": "official005",
+    "name": "Tech Innovators Cup"
+  },
+  {
+    "id": "official006",
+    "name": "Regional Cyber Security Contest"
+  },
+  {
+    "id": "official007",
+    "name": "World Robotics Championship"
+  },
+  {
+    "id": "official008",
+    "name": "Blockchain Development Tournament"
+  },
+  {
+    "id": "official009",
+    "name": "Data Science Showdown"
+  },
+  {
+    "id": "official010",
+    "name": "Mobile App Development Contest"
+  },
+  {
+    "id": "official011",
+    "name": "Web Development Expo"
+  },
+  {
+    "id": "official012",
+    "name": "Cloud Computing Olympics"
+  },
+  {
+    "id": "official013",
+    "name": "Big Data Championship"
+  },
+  {
+    "id": "official014",
+    "name": "Quantum Computing Contest"
+  },
+  {
+    "id": "official015",
+    "name": "Augmented Reality Cup"
+  },
+  {
+    "id": "official016",
+    "name": "Virtual Reality Hackathon"
+  },
+  {
+    "id": "official017",
+    "name": "DevOps Masters Tournament"
+  },
+  {
+    "id": "official018",
+    "name": "IoT Innovation Challenge"
+  },
+  {
+    "id": "official019",
+    "name": "Autonomous Vehicles Competition"
+  },
+  {
+    "id": "official020",
+    "name": "Software Engineering Contest"
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "id": "contest101",
+  "access": true,
+  "name": "Global Coding Championship",
+  "description": "A worldwide competition to find the best coders.",
+  "status": "ACTIVE",
+  "startDate": "2024-08-01T00:00:00Z",
+  "endDate": "2024-08-31T23:59:59Z",
+  "problems": [
+    {
+      "solved": true,
+      "contestProblemName": "problem001",
+      "contestProblemId": "p001",
+      "name": "Array Manipulation",
+      "author": "Jane Doe",
+      "submissionAcceptedCount": 120,
+      "submissionCount": 200
+    },
+    {
+      "solved": false,
+      "contestProblemName": "problem002",
+      "contestProblemId": "p002",
+      "name": "Graph Theory Basics",
+      "author": "John Smith",
+      "submissionAcceptedCount": 80,
+      "submissionCount": 250
+    },
+    {
+      "solved": true,
+      "contestProblemName": "problem003",
+      "contestProblemId": "p003",
+      "name": "Dynamic Programming",
+      "author": "Alice Johnson",
+      "submissionAcceptedCount": 95,
+      "submissionCount": 150
+    }
+  ]
+}

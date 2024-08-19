@@ -1,0 +1,202 @@
+[
+  {
+    "runId": "run001",
+    "user": "user001",
+    "problemId": "problem001",
+    "time": 120,
+    "memory": 64,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T10:00:00Z"
+  },
+  {
+    "runId": "run002",
+    "user": "user002",
+    "problemId": "problem002",
+    "time": 180,
+    "memory": 128,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T10:15:00Z"
+  },
+  {
+    "runId": "run003",
+    "user": "user003",
+    "problemId": "problem003",
+    "time": 90,
+    "memory": 256,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T10:30:00Z"
+  },
+  {
+    "runId": "run004",
+    "user": "user004",
+    "problemId": "problem004",
+    "time": 210,
+    "memory": 512,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T10:45:00Z"
+  },
+  {
+    "runId": "run005",
+    "user": "user005",
+    "problemId": "problem005",
+    "time": 130,
+    "memory": 64,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T11:00:00Z"
+  },
+  {
+    "runId": "run006",
+    "user": "user006",
+    "problemId": "problem006",
+    "time": 200,
+    "memory": 128,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T11:15:00Z"
+  },
+  {
+    "runId": "run007",
+    "user": "user007",
+    "problemId": "problem007",
+    "time": 160,
+    "memory": 256,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T11:30:00Z"
+  },
+  {
+    "runId": "run008",
+    "user": "user008",
+    "problemId": "problem008",
+    "time": 140,
+    "memory": 512,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T11:45:00Z"
+  },
+  {
+    "runId": "run009",
+    "user": "user009",
+    "problemId": "problem009",
+    "time": 110,
+    "memory": 64,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T12:00:00Z"
+  },
+  {
+    "runId": "run010",
+    "user": "user010",
+    "problemId": "problem010",
+    "time": 170,
+    "memory": 128,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T12:15:00Z"
+  },
+  {
+    "runId": "run011",
+    "user": "user011",
+    "problemId": "problem011",
+    "time": 150,
+    "memory": 256,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T12:30:00Z"
+  },
+  {
+    "runId": "run012",
+    "user": "user012",
+    "problemId": "problem012",
+    "time": 190,
+    "memory": 512,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T12:45:00Z"
+  },
+  {
+    "runId": "run013",
+    "user": "user013",
+    "problemId": "problem013",
+    "time": 100,
+    "memory": 64,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T13:00:00Z"
+  },
+  {
+    "runId": "run014",
+    "user": "user014",
+    "problemId": "problem014",
+    "time": 175,
+    "memory": 128,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T13:15:00Z"
+  },
+  {
+    "runId": "run015",
+    "user": "user015",
+    "problemId": "problem015",
+    "time": 165,
+    "memory": 256,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T13:30:00Z"
+  },
+  {
+    "runId": "run016",
+    "user": "user016",
+    "problemId": "problem016",
+    "time": 125,
+    "memory": 512,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T13:45:00Z"
+  },
+  {
+    "runId": "run017",
+    "user": "user017",
+    "problemId": "problem017",
+    "time": 180,
+    "memory": 64,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T14:00:00Z"
+  },
+  {
+    "runId": "run018",
+    "user": "user018",
+    "problemId": "problem018",
+    "time": 140,
+    "memory": 128,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T14:15:00Z"
+  },
+  {
+    "runId": "run019",
+    "user": "user019",
+    "problemId": "problem019",
+    "time": 210,
+    "memory": 256,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T14:30:00Z"
+  },
+  {
+    "runId": "run020",
+    "user": "user020",
+    "problemId": "problem020",
+    "time": 195,
+    "memory": 512,
+    "result": "default",
+    "language": "default",
+    "submissionDate": "2024-08-07T14:45:00Z"
+  }
+]

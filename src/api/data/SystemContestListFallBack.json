@@ -1,0 +1,142 @@
+[
+  {
+    "id": "contest001",
+    "name": "Annual Programming Contest",
+    "status": "ACTIVE",
+    "endDate": "2024-12-31T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest002",
+    "name": "Summer Code Challenge",
+    "status": "PENDING",
+    "endDate": "2024-08-31T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest003",
+    "name": "Winter Hackathon",
+    "status": "FINISHED",
+    "endDate": "2023-12-15T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest004",
+    "name": "Spring Developer Cup",
+    "status": "ACTIVE",
+    "endDate": "2024-09-30T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest005",
+    "name": "Autumn Algorithm Contest",
+    "status": "PENDING",
+    "endDate": "2024-10-31T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest006",
+    "name": "Monthly Code Wars",
+    "status": "ACTIVE",
+    "endDate": "2024-08-31T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest007",
+    "name": "AI Programming Contest",
+    "status": "FINISHED",
+    "endDate": "2023-11-30T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest008",
+    "name": "Cyber Security Challenge",
+    "status": "PENDING",
+    "endDate": "2024-09-30T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest009",
+    "name": "Data Science Marathon",
+    "status": "ACTIVE",
+    "endDate": "2024-11-30T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest010",
+    "name": "Web Development Sprint",
+    "status": "FINISHED",
+    "endDate": "2024-01-15T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest011",
+    "name": "Mobile App Contest",
+    "status": "ACTIVE",
+    "endDate": "2024-10-15T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest012",
+    "name": "Cloud Computing Clash",
+    "status": "PENDING",
+    "endDate": "2024-12-15T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest013",
+    "name": "Blockchain Battle",
+    "status": "FINISHED",
+    "endDate": "2023-12-01T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest014",
+    "name": "Game Development Jam",
+    "status": "ACTIVE",
+    "endDate": "2024-08-25T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest015",
+    "name": "IoT Innovation Challenge",
+    "status": "PENDING",
+    "endDate": "2024-09-15T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest016",
+    "name": "Robotics Coding Contest",
+    "status": "FINISHED",
+    "endDate": "2023-11-01T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest017",
+    "name": "AR/VR Programming Contest",
+    "status": "ACTIVE",
+    "endDate": "2024-12-01T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest018",
+    "name": "Big Data Analysis Contest",
+    "status": "PENDING",
+    "endDate": "2024-11-01T23:59:59Z",
+    "isPrivate": true
+  },
+  {
+    "id": "contest019",
+    "name": "DevOps Challenge",
+    "status": "FINISHED",
+    "endDate": "2024-07-31T23:59:59Z",
+    "isPrivate": false
+  },
+  {
+    "id": "contest020",
+    "name": "Quantum Computing Contest",
+    "status": "ACTIVE",
+    "endDate": "2024-10-31T23:59:59Z",
+    "isPrivate": false
+  }
+]

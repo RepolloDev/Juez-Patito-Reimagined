@@ -1,0 +1,42 @@
+{
+  "name": "John",
+  "lastname": "Doe",
+  "email": "john.doe@example.com",
+  "resolvedProblems": [
+    {
+      "name": "Array Manipulation",
+      "problemId": "problem001",
+      "submissionId": "submission001",
+      "submissionDate": "2024-08-07T14:30:00Z",
+      "submissionCount": 3
+    },
+    {
+      "name": "Graph Theory Basics",
+      "problemId": "problem002",
+      "submissionId": "submission002",
+      "submissionDate": "2024-08-07T15:00:00Z",
+      "submissionCount": 2
+    },
+    {
+      "name": "Dynamic Programming",
+      "problemId": "problem003",
+      "submissionId": "submission003",
+      "submissionDate": "2024-08-07T15:30:00Z",
+      "submissionCount": 4
+    },
+    {
+      "name": "Sorting Algorithms",
+      "problemId": "problem004",
+      "submissionId": "submission004",
+      "submissionDate": "2024-08-07T16:00:00Z",
+      "submissionCount": 1
+    },
+    {
+      "name": "Binary Search",
+      "problemId": "problem005",
+      "submissionId": "submission005",
+      "submissionDate": "2024-08-07T16:30:00Z",
+      "submissionCount": 3
+    }
+  ]
+}

@@ -1,11 +1,24 @@
 {
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "command": "./node_modules/.bin/astro dev",
-      "name": "Development server",
-      "request": "launch",
-      "type": "node-terminal"
-    }
-  ]
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "request": "launch",
+            "name": "Launch Program",
+            "type": "node",
+            "program": "${workspaceFolder}/${relativeFile}",
+            "cwd": "${workspaceFolder}",
+            "env": {},
+            "runtimeExecutable": "C:\\Users\\gabri\\.deno\\bin\\deno.EXE",
+            "runtimeArgs": [
+                "run",
+                "--inspect-wait",
+                "--allow-all",
+                "--unstable-sloppy-imports"
+            ],
+            "attachSimplePort": 9229
+        }
+    ]
 }

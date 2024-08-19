@@ -1,0 +1,10 @@
+{
+  "submissionId": "sub001",
+  "problemId": "prob001",
+  "code": "print(sum(map(int, input().split())))",
+  "user": "user123",
+  "language": "Python3.12",
+  "time": 150,
+  "memory": 512,
+  "result": "AC"
+}
