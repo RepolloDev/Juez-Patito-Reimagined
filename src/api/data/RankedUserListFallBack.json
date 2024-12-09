@@ -1,0 +1,142 @@
+[
+  {
+    "position": 1,
+    "user": "user001",
+    "userFullName": "John Doe",
+    "submissionCount": 15,
+    "submissionAcceptedCount": 10
+  },
+  {
+    "position": 2,
+    "user": "user002",
+    "userFullName": "Jane Smith",
+    "submissionCount": 18,
+    "submissionAcceptedCount": 12
+  },
+  {
+    "position": 3,
+    "user": "user003",
+    "userFullName": "Alice Johnson",
+    "submissionCount": 20,
+    "submissionAcceptedCount": 15
+  },
+  {
+    "position": 4,
+    "user": "user004",
+    "userFullName": "Bob Brown",
+    "submissionCount": 12,
+    "submissionAcceptedCount": 9
+  },
+  {
+    "position": 5,
+    "user": "user005",
+    "userFullName": "Charlie Davis",
+    "submissionCount": 25,
+    "submissionAcceptedCount": 19
+  },
+  {
+    "position": 6,
+    "user": "user006",
+    "userFullName": "Diana Evans",
+    "submissionCount": 22,
+    "submissionAcceptedCount": 17
+  },
+  {
+    "position": 7,
+    "user": "user007",
+    "userFullName": "Evan Harris",
+    "submissionCount": 10,
+    "submissionAcceptedCount": 8
+  },
+  {
+    "position": 8,
+    "user": "user008",
+    "userFullName": "Fiona Garcia",
+    "submissionCount": 16,
+    "submissionAcceptedCount": 11
+  },
+  {
+    "position": 9,
+    "user": "user009",
+    "userFullName": "George Lee",
+    "submissionCount": 19,
+    "submissionAcceptedCount": 13
+  },
+  {
+    "position": 10,
+    "user": "user010",
+    "userFullName": "Helen Martinez",
+    "submissionCount": 14,
+    "submissionAcceptedCount": 10
+  },
+  {
+    "position": 11,
+    "user": "user011",
+    "userFullName": "Isaac Nelson",
+    "submissionCount": 21,
+    "submissionAcceptedCount": 16
+  },
+  {
+    "position": 12,
+    "user": "user012",
+    "userFullName": "Julia Ortiz",
+    "submissionCount": 18,
+    "submissionAcceptedCount": 12
+  },
+  {
+    "position": 13,
+    "user": "user013",
+    "userFullName": "Kevin Peterson",
+    "submissionCount": 23,
+    "submissionAcceptedCount": 18
+  },
+  {
+    "position": 14,
+    "user": "user014",
+    "userFullName": "Laura Quinn",
+    "submissionCount": 20,
+    "submissionAcceptedCount": 14
+  },
+  {
+    "position": 15,
+    "user": "user015",
+    "userFullName": "Michael Rodriguez",
+    "submissionCount": 17,
+    "submissionAcceptedCount": 12
+  },
+  {
+    "position": 16,
+    "user": "user016",
+    "userFullName": "Natalie Scott",
+    "submissionCount": 15,
+    "submissionAcceptedCount": 10
+  },
+  {
+    "position": 17,
+    "user": "user017",
+    "userFullName": "Oscar Thomas",
+    "submissionCount": 19,
+    "submissionAcceptedCount": 14
+  },
+  {
+    "position": 18,
+    "user": "user018",
+    "userFullName": "Paula Upton",
+    "submissionCount": 22,
+    "submissionAcceptedCount": 17
+  },
+  {
+    "position": 19,
+    "user": "user019",
+    "userFullName": "Quinn Vargas",
+    "submissionCount": 24,
+    "submissionAcceptedCount": 18
+  },
+  {
+    "position": 20,
+    "user": "user020",
+    "userFullName": "Rebecca White",
+    "submissionCount": 13,
+    "submissionAcceptedCount": 9
+  }
+]

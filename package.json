@@ -1,0 +1,39 @@
+{
+  "name": "juez-patito-reimagined",
+  "type": "module",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RepolloDev/Juez-Patito-Reimagined"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/solid-js": "^5.0.0",
+    "@astrojs/tailwind": "^5.1.3",
+    "@astrojs/vercel": "^8.0.0",
+    "@fontsource-variable/fira-code": "^5.0.19",
+    "@fontsource/geist-sans": "^5.0.3",
+    "@preline/combobox": "^2.5.0",
+    "@preline/theme-switch": "^2.5.0",
+    "astro": "^5.0.3",
+    "cheerio": "1.0.0-rc.12",
+    "preline": "^2.5.0",
+    "scrape-it": "^6.1.2",
+    "sharp": "^0.33.5",
+    "solid-js": "^1.9.1",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "@iconify-json/ph": "^1.1.14",
+    "@iconify/tailwind": "^1.1.2",
+    "@tailwindcss/typography": "^0.5.14"
+  }
+}

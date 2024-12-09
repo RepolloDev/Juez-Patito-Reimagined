@@ -1,0 +1,402 @@
+[
+  {
+    "problemId": "1",
+    "solved": true,
+    "name": "Ejemplo de problema 1",
+    "author": "Autor 1",
+    "submissionAcceptedCount": 10,
+    "submissionCount": 20
+  },
+  {
+    "problemId": "2",
+    "solved": false,
+    "name": "Ejemplo de problema 2",
+    "author": "Autor 2",
+    "submissionAcceptedCount": 5,
+    "submissionCount": 15
+  },
+  {
+    "problemId": "3",
+    "solved": true,
+    "name": "Ejemplo de problema 3",
+    "author": "Autor 3",
+    "submissionAcceptedCount": 8,
+    "submissionCount": 18
+  },
+  {
+    "problemId": "4",
+    "solved": false,
+    "name": "Ejemplo de problema 4",
+    "author": "Autor 4",
+    "submissionAcceptedCount": 3,
+    "submissionCount": 12
+  },
+  {
+    "problemId": "5",
+    "solved": true,
+    "name": "Ejemplo de problema 5",
+    "author": "Autor 5",
+    "submissionAcceptedCount": 12,
+    "submissionCount": 25
+  },
+  {
+    "problemId": "6",
+    "solved": false,
+    "name": "Ejemplo de problema 6",
+    "author": "Autor 6",
+    "submissionAcceptedCount": 7,
+    "submissionCount": 17
+  },
+  {
+    "problemId": "7",
+    "solved": true,
+    "name": "Ejemplo de problema 7",
+    "author": "Autor 7",
+    "submissionAcceptedCount": 9,
+    "submissionCount": 19
+  },
+  {
+    "problemId": "8",
+    "solved": false,
+    "name": "Ejemplo de problema 8",
+    "author": "Autor 8",
+    "submissionAcceptedCount": 4,
+    "submissionCount": 14
+  },
+  {
+    "problemId": "9",
+    "solved": true,
+    "name": "Ejemplo de problema 9",
+    "author": "Autor 9",
+    "submissionAcceptedCount": 11,
+    "submissionCount": 22
+  },
+  {
+    "problemId": "10",
+    "solved": false,
+    "name": "Ejemplo de problema 10",
+    "author": "Autor 10",
+    "submissionAcceptedCount": 6,
+    "submissionCount": 16
+  },
+  {
+    "problemId": "11",
+    "solved": true,
+    "name": "Ejemplo de problema 11",
+    "author": "Autor 11",
+    "submissionAcceptedCount": 13,
+    "submissionCount": 27
+  },
+  {
+    "problemId": "12",
+    "solved": false,
+    "name": "Ejemplo de problema 12",
+    "author": "Autor 12",
+    "submissionAcceptedCount": 2,
+    "submissionCount": 10
+  },
+  {
+    "problemId": "13",
+    "solved": true,
+    "name": "Ejemplo de problema 13",
+    "author": "Autor 13",
+    "submissionAcceptedCount": 14,
+    "submissionCount": 28
+  },
+  {
+    "problemId": "14",
+    "solved": false,
+    "name": "Ejemplo de problema 14",
+    "author": "Autor 14",
+    "submissionAcceptedCount": 1,
+    "submissionCount": 5
+  },
+  {
+    "problemId": "15",
+    "solved": true,
+    "name": "Ejemplo de problema 15",
+    "author": "Autor 15",
+    "submissionAcceptedCount": 15,
+    "submissionCount": 30
+  },
+  {
+    "problemId": "16",
+    "solved": false,
+    "name": "Ejemplo de problema 16",
+    "author": "Autor 16",
+    "submissionAcceptedCount": 0,
+    "submissionCount": 2
+  },
+  {
+    "problemId": "17",
+    "solved": true,
+    "name": "Ejemplo de problema 17",
+    "author": "Autor 17",
+    "submissionAcceptedCount": 16,
+    "submissionCount": 32
+  },
+  {
+    "problemId": "18",
+    "solved": false,
+    "name": "Ejemplo de problema 18",
+    "author": "Autor 18",
+    "submissionAcceptedCount": 20,
+    "submissionCount": 40
+  },
+  {
+    "problemId": "19",
+    "solved": true,
+    "name": "Ejemplo de problema 19",
+    "author": "Autor 19",
+    "submissionAcceptedCount": 18,
+    "submissionCount": 36
+  },
+  {
+    "problemId": "20",
+    "solved": false,
+    "name": "Ejemplo de problema 20",
+    "author": "Autor 20",
+    "submissionAcceptedCount": 19,
+    "submissionCount": 38
+  },
+  {
+    "problemId": "21",
+    "solved": true,
+    "name": "Ejemplo de problema 21",
+    "author": "Autor 21",
+    "submissionAcceptedCount": 17,
+    "submissionCount": 34
+  },
+  {
+    "problemId": "22",
+    "solved": false,
+    "name": "Ejemplo de problema 22",
+    "author": "Autor 22",
+    "submissionAcceptedCount": 12,
+    "submissionCount": 24
+  },
+  {
+    "problemId": "23",
+    "solved": true,
+    "name": "Ejemplo de problema 23",
+    "author": "Autor 23",
+    "submissionAcceptedCount": 10,
+    "submissionCount": 20
+  },
+  {
+    "problemId": "24",
+    "solved": false,
+    "name": "Ejemplo de problema 24",
+    "author": "Autor 24",
+    "submissionAcceptedCount": 8,
+    "submissionCount": 18
+  },
+  {
+    "problemId": "25",
+    "solved": true,
+    "name": "Ejemplo de problema 25",
+    "author": "Autor 25",
+    "submissionAcceptedCount": 9,
+    "submissionCount": 19
+  },
+  {
+    "problemId": "26",
+    "solved": false,
+    "name": "Ejemplo de problema 26",
+    "author": "Autor 26",
+    "submissionAcceptedCount": 7,
+    "submissionCount": 17
+  },
+  {
+    "problemId": "27",
+    "solved": true,
+    "name": "Ejemplo de problema 27",
+    "author": "Autor 27",
+    "submissionAcceptedCount": 11,
+    "submissionCount": 22
+  },
+  {
+    "problemId": "28",
+    "solved": false,
+    "name": "Ejemplo de problema 28",
+    "author": "Autor 28",
+    "submissionAcceptedCount": 6,
+    "submissionCount": 16
+  },
+  {
+    "problemId": "29",
+    "solved": true,
+    "name": "Ejemplo de problema 29",
+    "author": "Autor 29",
+    "submissionAcceptedCount": 13,
+    "submissionCount": 27
+  },
+  {
+    "problemId": "30",
+    "solved": false,
+    "name": "Ejemplo de problema 30",
+    "author": "Autor 30",
+    "submissionAcceptedCount": 5,
+    "submissionCount": 15
+  },
+  {
+    "problemId": "31",
+    "solved": true,
+    "name": "Ejemplo de problema 31",
+    "author": "Autor 31",
+    "submissionAcceptedCount": 12,
+    "submissionCount": 25
+  },
+  {
+    "problemId": "32",
+    "solved": false,
+    "name": "Ejemplo de problema 32",
+    "author": "Autor 32",
+    "submissionAcceptedCount": 4,
+    "submissionCount": 14
+  },
+  {
+    "problemId": "33",
+    "solved": true,
+    "name": "Ejemplo de problema 33",
+    "author": "Autor 33",
+    "submissionAcceptedCount": 14,
+    "submissionCount": 28
+  },
+  {
+    "problemId": "34",
+    "solved": false,
+    "name": "Ejemplo de problema 34",
+    "author": "Autor 34",
+    "submissionAcceptedCount": 3,
+    "submissionCount": 12
+  },
+  {
+    "problemId": "35",
+    "solved": true,
+    "name": "Ejemplo de problema 35",
+    "author": "Autor 35",
+    "submissionAcceptedCount": 15,
+    "submissionCount": 30
+  },
+  {
+    "problemId": "36",
+    "solved": false,
+    "name": "Ejemplo de problema 36",
+    "author": "Autor 36",
+    "submissionAcceptedCount": 2,
+    "submissionCount": 10
+  },
+  {
+    "problemId": "37",
+    "solved": true,
+    "name": "Ejemplo de problema 37",
+    "author": "Autor 37",
+    "submissionAcceptedCount": 16,
+    "submissionCount": 32
+  },
+  {
+    "problemId": "38",
+    "solved": false,
+    "name": "Ejemplo de problema 38",
+    "author": "Autor 38",
+    "submissionAcceptedCount": 1,
+    "submissionCount": 5
+  },
+  {
+    "problemId": "39",
+    "solved": true,
+    "name": "Ejemplo de problema 39",
+    "author": "Autor 39",
+    "submissionAcceptedCount": 17,
+    "submissionCount": 34
+  },
+  {
+    "problemId": "40",
+    "solved": false,
+    "name": "Ejemplo de problema 40",
+    "author": "Autor 40",
+    "submissionAcceptedCount": 0,
+    "submissionCount": 2
+  },
+  {
+    "problemId": "41",
+    "solved": true,
+    "name": "Ejemplo de problema 41",
+    "author": "Autor 41",
+    "submissionAcceptedCount": 18,
+    "submissionCount": 36
+  },
+  {
+    "problemId": "42",
+    "solved": false,
+    "name": "Ejemplo de problema 42",
+    "author": "Autor 42",
+    "submissionAcceptedCount": 20,
+    "submissionCount": 40
+  },
+  {
+    "problemId": "43",
+    "solved": true,
+    "name": "Ejemplo de problema 43",
+    "author": "Autor 43",
+    "submissionAcceptedCount": 19,
+    "submissionCount": 38
+  },
+  {
+    "problemId": "44",
+    "solved": false,
+    "name": "Ejemplo de problema 44",
+    "author": "Autor 44",
+    "submissionAcceptedCount": 18,
+    "submissionCount": 36
+  },
+  {
+    "problemId": "45",
+    "solved": true,
+    "name": "Ejemplo de problema 45",
+    "author": "Autor 45",
+    "submissionAcceptedCount": 17,
+    "submissionCount": 34
+  },
+  {
+    "problemId": "46",
+    "solved": false,
+    "name": "Ejemplo de problema 46",
+    "author": "Autor 46",
+    "submissionAcceptedCount": 12,
+    "submissionCount": 24
+  },
+  {
+    "problemId": "47",
+    "solved": true,
+    "name": "Ejemplo de problema 47",
+    "author": "Autor 47",
+    "submissionAcceptedCount": 10,
+    "submissionCount": 20
+  },
+  {
+    "problemId": "48",
+    "solved": false,
+    "name": "Ejemplo de problema 48",
+    "author": "Autor 48",
+    "submissionAcceptedCount": 8,
+    "submissionCount": 18
+  },
+  {
+    "problemId": "49",
+    "solved": true,
+    "name": "Ejemplo de problema 49",
+    "author": "Autor 49",
+    "submissionAcceptedCount": 9,
+    "submissionCount": 19
+  },
+  {
+    "problemId": "50",
+    "solved": false,
+    "name": "Ejemplo de problema 50",
+    "author": "Autor 50",
+    "submissionAcceptedCount": 7,
+    "submissionCount": 17
+  }
+]
